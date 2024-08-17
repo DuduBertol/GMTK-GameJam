@@ -9,6 +9,12 @@ public class s_farmerEntity : Entity
     public ParticleSystem _hitParticle;
 
     [Header("Debug")] public bool takeDamageButton = false;
+
+    private void OnEnable()
+    {
+        Create();
+    }
+
     public override void Create()
     {
         base.Create();
@@ -17,7 +23,18 @@ public class s_farmerEntity : Entity
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
+        var _popupDamage = s_popupManager.Instance.GetPopoup();
+        _popupDamage.transform.position = this.transform.position;
+        _popupDamage.gameObject.SetActive(true);
+        _popupDamage.GetComponent<s_popupController>().Create(_damage.ToString());
         _hitParticle.Play();
+        
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        this.gameObject.SetActive(false);
     }
 
     private void Update()

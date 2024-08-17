@@ -6,7 +6,7 @@ TagManager:
   tags:
   - GoldenEgg
   - Tent
-  - EggPlacer
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,9 +14,9 @@ TagManager:
   - MouseLayer
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - FloorLayer
+  - Projectiles
   - 
   - 
   - 

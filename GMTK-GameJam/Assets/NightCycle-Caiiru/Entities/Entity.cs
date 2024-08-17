@@ -14,7 +14,13 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void TakeDamage(int _damage)
     {
-        this.currentHP -= _damage <= 0 ? 0 : currentHP - _damage;
+        this.currentHP = currentHP - _damage <= 0 ? 0 : currentHP - _damage;
+        if (currentHP == 0) Die();
+    }
+
+    public virtual void Die()
+    {
+        Debug.Log(gameObject.name + " died");
     }
     
 }
