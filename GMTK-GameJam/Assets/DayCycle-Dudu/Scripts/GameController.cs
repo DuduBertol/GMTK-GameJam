@@ -72,9 +72,13 @@ public class GameController : MonoBehaviour
     {
         return isDay;
     }
-    public void IncreaseEggAmount(int value)
+    public int GetEggAmount()
     {
-        eggAmount += value;
+        return eggAmount;
+    }
+    public void SetEggAmount(int value)
+    {
+        eggAmount = value;
     }
 }
 

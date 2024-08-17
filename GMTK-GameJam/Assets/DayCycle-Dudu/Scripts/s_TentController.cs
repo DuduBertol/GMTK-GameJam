@@ -44,9 +44,9 @@ public class s_TentController : MonoBehaviour
         }  
     }
 
-    public void SetObjectAsChild(Transform objChild)
+    /* public void SetObjectAsChild(Transform objChild)
     {
         objChild.parent = eggPlacer;
         objChild.localPosition = Vector3.zero;
-    }
+    } */
 }
