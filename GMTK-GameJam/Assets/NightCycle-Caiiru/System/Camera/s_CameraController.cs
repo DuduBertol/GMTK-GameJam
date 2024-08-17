@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class s_CameraController : MonoBehaviour
-{
-    public CameraState cameraState = CameraState.Platformer;
-    public List<CameraStateSettings> cameras = new List<CameraStateSettings>();
-    
-    public Vector3 cameraOffset;
-    public Vector3 cameraRotationOffset;
-    [Range(0.1f,0.9f)]
-    public float cameraLerpTime;
-    [Space(10)]
+{ 
     [Header("MVP")] public Transform cameraFollowObject;
-       
+    public CameraData cameraData;
     void Start()
     {
-        
+        if (cameraData == null)
+        {
+            Debug.LogError("Camera Without data");
+        } 
+        if (cameraFollowObject == null)
+            return;
     }
 
     // Update is called once per frame
@@ -27,12 +24,9 @@ public class s_CameraController : MonoBehaviour
 
     public void FollowObject()
     {
-        if (cameraFollowObject == null)
-            return;
-
         this.transform.position =
-            Vector3.Lerp(transform.position, cameraFollowObject.position + cameraOffset, cameraLerpTime);
-        this.transform.rotation = Quaternion.Euler(cameraRotationOffset);
+            Vector3.Lerp(transform.position, cameraFollowObject.position + cameraData.cameraPositionOffset, cameraData.cameraLerpTime);
+        this.transform.rotation = Quaternion.Euler(cameraData.cameraRotationOffset);
     }
 }
 [System.Serializable]

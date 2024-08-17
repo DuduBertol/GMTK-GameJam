@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         HandleMovement(); // Desconsidera essa movimentação, ta toda quebrada
     }
