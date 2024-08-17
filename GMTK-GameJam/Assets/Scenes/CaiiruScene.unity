@@ -807,6 +807,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 782b08c4-ebed-4428-9b1e-53e4372a24cf
     m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 941388260}
+        m_TargetAssemblyTypeName: s_PlayerThrow, Assembly-CSharp
+        m_MethodName: OnFireAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f14a085b-e021-4f1b-8053-c8a08cfc5508
+    m_ActionName: Movement/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -845,6 +861,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectTimeFly: 5
   _destinationPosition: {x: 0, y: 0, z: 0}
+  _isFiring: 0
+  rockPrefab: {fileID: 8971865803549679656, guid: a3d64bf08d1ff9b48a7b5f6286d493cf,
+    type: 3}
 --- !u!1 &1097906369
 GameObject:
   m_ObjectHideFlags: 0

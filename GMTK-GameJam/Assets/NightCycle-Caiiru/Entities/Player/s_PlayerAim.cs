@@ -41,5 +41,8 @@ public class s_PlayerAim : MonoBehaviour
         }
     }
 
-     
+    public Vector3 GetMouseWorldPosition()
+    {
+        return _mousePosition;
+    }
 }

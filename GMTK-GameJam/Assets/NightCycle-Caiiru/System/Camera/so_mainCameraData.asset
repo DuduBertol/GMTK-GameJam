@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0bfa11c0c54e49acc204912b65af2, type: 3}
   m_Name: so_mainCameraData
   m_EditorClassIdentifier: 
-  cameraPositionOffset: {x: 0, y: 21.7, z: -38.2}
-  cameraRotationOffset: {x: 30, y: 0, z: 0}
+  cameraPositionOffset: {x: 0, y: 20.3, z: -38.2}
+  cameraRotationOffset: {x: 12.8, y: 0, z: 0}
   cameraLerpTime: 0.161
