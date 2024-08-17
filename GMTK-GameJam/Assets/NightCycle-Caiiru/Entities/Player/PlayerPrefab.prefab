@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mousePosition: {x: 0, y: 0, z: 0}
-  mouseTarget: {fileID: 0}
+  _mouseTargetGO: {fileID: 6413535795339251061, guid: c6a4742ad55ca4948a0f302dc86fe78b,
+    type: 3}
   mouseLayer:
     serializedVersion: 2
     m_Bits: 8
-  _lineRenderer: {fileID: 0}
   debugButton: 1
 --- !u!114 &8651214165193218645
 MonoBehaviour:
@@ -193,13 +193,14 @@ MonoBehaviour:
   rockPrefab: {fileID: 3181682960831139370, guid: 41b6d80b15db5b344bae8411adb67bbf,
     type: 3}
   _rockCount: 10
-  _lineRenderer: {fileID: 0}
+  _lineRendererGO: {fileID: 1597852487625556937, guid: 0838fee4cddb7284885b8328abd534fd,
+    type: 3}
   _linePoints: 13
   _timeBetweenPoints: 0.1
   _rockCollisionLayerMask:
     serializedVersion: 2
     m_Bits: 136
-  playerIsHoldingRock: 1
+  playerIsHoldingRock: 0
 --- !u!114 &4638306945361046042
 MonoBehaviour:
   m_ObjectHideFlags: 0
