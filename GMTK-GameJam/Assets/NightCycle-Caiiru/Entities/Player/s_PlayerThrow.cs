@@ -23,8 +23,9 @@ public class s_PlayerThrow : MonoBehaviour
     [SerializeField] private int _rockCount;
     private GameObject[] _rocks;
 
-    [Space(5)] [Header("Projection Settings")]
-    [SerializeField]private LineRenderer _lineRenderer;
+    [Space(5)] [Header("Projection Settings")] [SerializeField]
+    private GameObject _lineRendererGO;
+    private LineRenderer _lineRenderer;
 
     [Range(10, 100)][SerializeField] private int _linePoints = 25;
     [Range(0.01f, 0.25f)][SerializeField]private float _timeBetweenPoints = 0.1f;
@@ -42,6 +43,9 @@ public class s_PlayerThrow : MonoBehaviour
     #endregion
     void Start()
     {
+        var _line = Instantiate(_lineRendererGO);
+        _lineRenderer = _line.transform.GetComponent<LineRenderer>();
+        
         _playerAim = GetComponent<s_PlayerAim>();
         _rockRigidbody = rockPrefab.GetComponent<Rigidbody>();
 
@@ -161,7 +165,7 @@ public class s_PlayerThrow : MonoBehaviour
 
     public void OnFireAction(InputAction.CallbackContext context)
     { 
-        if(_canThrow)
+        if(_canThrow && playerIsHoldingRock)
             ThrowObject(_forceVelocity);
     }
 }

@@ -61,8 +61,7 @@ public class s_Rock : MonoBehaviour
         _tweenAnimation = transform.gameObject.LeanMoveY(transform.position.y - _negativeMoveY, _animationDuration);
 
         yield return new WaitForSeconds(_animationDuration);
-        LeanTween.cancel(_tweenAnimation.id);
-        Debug.Log("Rock Despawn> " + _tweenAnimation);
+        LeanTween.cancel(_tweenAnimation.id); 
         this.gameObject.SetActive(false);
     }
 

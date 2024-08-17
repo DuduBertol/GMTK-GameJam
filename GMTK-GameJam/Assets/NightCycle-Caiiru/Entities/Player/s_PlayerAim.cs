@@ -10,17 +10,16 @@ public class s_PlayerAim : MonoBehaviour
     private Vector2 _screenMousePosition;
     [SerializeField] private Vector3 _mousePosition;
 
-     public GameObject mouseTarget;
+     GameObject _mouseTargetPosition;
+     public GameObject _mouseTargetGO;
      public LayerMask mouseLayer;
 
-     [Header("Line Renderer")] [SerializeField]
-     private LineRenderer _lineRenderer;
-
+    
      [Header("Debug")] public bool debugButton;
     void Start()
     {
-        if(mouseTarget == null)
-                mouseTarget = GameObject.Find("MouseTarget");
+        _mouseTargetPosition = Instantiate(_mouseTargetGO);
+         
     }
 
     // Update is called once per frame
@@ -32,9 +31,9 @@ public class s_PlayerAim : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, mouseLayer))
         {
             _mousePosition = new Vector3(raycastHit.point.x, raycastHit.point.y, raycastHit.point.z);
-            if (mouseTarget != null)
+            if (_mouseTargetPosition != null)
             {
-                mouseTarget.transform.position = _mousePosition;
+                _mouseTargetPosition.transform.position = _mousePosition;
             }
             if(debugButton)
                 Debug.DrawLine(transform.position, _mousePosition, Color.blue);
