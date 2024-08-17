@@ -1,0 +1,28 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class s_TentController : MonoBehaviour
+{
+    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private Material dayMaterial;
+    [SerializeField] private Material nightMaterial;
+
+    private void Start() 
+    {
+        GameController.Instance.OnDayNightChanged += GameController_OnDayNightChanged;
+    }
+
+    private void GameController_OnDayNightChanged(object sender, EventArgs e)
+    {
+        if(GameController.Instance.GetIsDay())
+        {
+            meshRenderer.material = dayMaterial;
+        }
+        else
+        {
+            meshRenderer.material = nightMaterial;
+        }
+    }
+}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GoldenEgg
   - Tent
+  - EggPlacer
   layers:
   - Default
   - TransparentFX

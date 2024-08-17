@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5366603041829901686}
   - component: {fileID: 8993019170007330054}
   - component: {fileID: 6581184841694443143}
-  - component: {fileID: 4680618261102509904}
+  - component: {fileID: 6960383737165463724}
   m_Layer: 0
   m_Name: Egg
   m_TagString: GoldenEgg
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4680618261102509904
+--- !u!54 &6960383737165463724
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8971865803549679656}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
