@@ -5929,15 +5929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ee7b9b6897a1842ac1666bb0971d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraState: 0
-  cameras:
-  - name: Platformer
-    offset: {x: 0, y: 0, z: 0}
-    cameraTimeLerp: 0
-  cameraOffset: {x: 0, y: 31, z: -46.2}
-  cameraRotationOffset: {x: 30, y: 0, z: 0}
-  cameraLerpTime: 0.1
   cameraFollowObject: {fileID: 941388255}
+  cameraData: {fileID: 11400000, guid: 128eab0c93da5104996759969cdcb04b, type: 2}
 --- !u!114 &1204949095
 MonoBehaviour:
   m_ObjectHideFlags: 0
