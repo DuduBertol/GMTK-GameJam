@@ -424,8 +424,8 @@ Transform:
   m_GameObject: {fileID: 822637039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: -2, z: 10.44}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalPosition: {x: 30, y: -17, z: 10.44}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1128036961}
@@ -529,8 +529,8 @@ Transform:
   m_GameObject: {fileID: 922051235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 10.44}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalPosition: {x: 0, y: -17, z: 10.44}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1128036961}
@@ -712,7 +712,7 @@ Transform:
   m_GameObject: {fileID: 941388251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -854,13 +854,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c95a88234c3054aa8fb1aaeda737c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectTimeFly: 5
+  _canThrow: 0
   _destinationPosition: {x: 0, y: 0, z: 0}
-  _throwObject: 0
   _height: 8
   _releasePosition: {fileID: 1952433685}
+  _throwCooldown: 1
   rockPrefab: {fileID: 3181682960831139370, guid: 41b6d80b15db5b344bae8411adb67bbf,
     type: 3}
+  _rockCount: 10
   _lineRenderer: {fileID: 732281720}
   _linePoints: 13
   _timeBetweenPoints: 0.1
@@ -868,7 +869,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 136
   playerIsHoldingRock: 1
-  fire: 0
 --- !u!1 &954271781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1610308241}
   enemiesPrefab:
   - {fileID: 690298607663099867, guid: 31243659ec666344ba5ccedee59a5a9a, type: 3}
-  _enemiesCount: 2
+  _enemiesCount: 3
   spawningEnemies: 0
   _enemiesPool: []
 --- !u!1 &1128036960
@@ -1531,8 +1531,8 @@ Transform:
   m_GameObject: {fileID: 1494858348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60, y: -2, z: 10.44}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalPosition: {x: 60, y: -17, z: 10.44}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1128036961}
@@ -1665,7 +1665,7 @@ Transform:
   m_GameObject: {fileID: 1680933641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1731,7 +1731,7 @@ Transform:
   m_GameObject: {fileID: 1952433684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

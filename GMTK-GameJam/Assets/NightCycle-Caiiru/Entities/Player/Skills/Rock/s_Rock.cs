@@ -10,18 +10,31 @@ public class s_Rock : MonoBehaviour
 
     private Vector3 _angleVelocity;
     private bool _hitSomething = false;
+
+    [Header("Rock Despawn Settings")] 
+    [SerializeField]
+    private float _lifeDuration = 1.5f;
+
+    [SerializeField] 
+    private float _negativeMoveY = 15f;
+    
+    [SerializeField]
+    private float _animationDuration = 0.3f;
     #region Components
 
-    private Rigidbody _rigidbody;
+    private LTDescr _tweenAnimation;
+    [SerializeField]private Rigidbody _rigidbody;
 
     #endregion
-    void OnEnable()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>(); 
     }
 
     public void Create(Vector3 _force, int _damage)
     {
+        _rigidbody.velocity = Vector3.zero;
+        _hitSomething = false;
         this._rockDamage = _damage;
         _rigidbody.AddForce(_force, ForceMode.Impulse);
         _angleVelocity = new Vector3(Random.Range(-360f, 360f), Random.Range(-360f, 360f), Random.Range(-360f, 360f));
@@ -34,7 +47,23 @@ public class s_Rock : MonoBehaviour
         {
             Quaternion deltaRotation = Quaternion.Euler(_angleVelocity * Time.fixedDeltaTime);
             _rigidbody.MoveRotation(_rigidbody.rotation * deltaRotation);
+            
         }
+        else{ 
+            StartCoroutine("RockDespawn");
+        }
+    }
+
+    IEnumerator RockDespawn()
+    {
+        
+        yield return new WaitForSeconds(_lifeDuration);
+        _tweenAnimation = transform.gameObject.LeanMoveY(transform.position.y - _negativeMoveY, _animationDuration);
+
+        yield return new WaitForSeconds(_animationDuration);
+        LeanTween.cancel(_tweenAnimation.id);
+        Debug.Log("Rock Despawn> " + _tweenAnimation);
+        this.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision other)

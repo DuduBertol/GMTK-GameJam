@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6939153758807291106}
   - component: {fileID: 6082080453290474722}
   - component: {fileID: 2298242465813509472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rockPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33b5209b46287e4d920606c23a4c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rockDamage: 1
+  _lifeDuration: 1
+  _negativeMoveY: 15
+  _animationDuration: 0.3
 --- !u!54 &6082080453290474722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,7 +142,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

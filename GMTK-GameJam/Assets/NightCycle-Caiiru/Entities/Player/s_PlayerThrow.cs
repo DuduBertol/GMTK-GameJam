@@ -5,16 +5,23 @@ using UnityEngine.Serialization;
 
 public class s_PlayerThrow : MonoBehaviour
 {
-    [Header("Throw Settings")]
-    [SerializeField] private float _objectTimeFly = 5f;
+    [Header("Throw Settings")] [SerializeField]
+    private bool _canThrow = false;
+    private float _objectTimeFly = 5f;
+    private Vector3 _forceVelocity;
     [SerializeField] private Vector3 _destinationPosition = Vector3.zero;
-    
-    
-    [SerializeField] private bool _throwObject;
-    
     [SerializeField] private float _height = 8f; // altura maxima do arco
     [SerializeField] private Transform _releasePosition;
+    
+    [Space(1)] 
+    [SerializeField] private float _throwCooldown;
+    private float _currentCooldown;
+    
+    [Header("Pool Settings")]
     public GameObject rockPrefab;
+
+    [SerializeField] private int _rockCount;
+    private GameObject[] _rocks;
 
     [Space(5)] [Header("Projection Settings")]
     [SerializeField]private LineRenderer _lineRenderer;
@@ -25,11 +32,10 @@ public class s_PlayerThrow : MonoBehaviour
     [SerializeField]private LayerMask _rockCollisionLayerMask;
     
     [Header("Debug")] public bool playerIsHoldingRock = false;
-    private Rigidbody _rockRigidbody;
-
-    public bool fire;
+    
+ 
     #region Components
-
+    private Rigidbody _rockRigidbody;
     private s_PlayerAim _playerAim;
     
 
@@ -40,15 +46,17 @@ public class s_PlayerThrow : MonoBehaviour
         _rockRigidbody = rockPrefab.GetComponent<Rigidbody>();
 
         int rockLayer = rockPrefab.gameObject.layer;
-        /*
-        for (int i = 0; i < 31; i++)
+
+        _rocks = new GameObject[_rockCount];
+
+        for (int i = 0; i < _rockCount; i++)
         {
-            if (!Physics.GetIgnoreLayerCollision(_rockCollisionLayerMask, i))
-            {
-                _rockCollisionLayerMask |= 1 << i;
-            }
+            var _instance = Instantiate(rockPrefab);
+            _instance.SetActive(false);
+            _instance.transform.SetParent(transform.GetChild(0));
+            _rocks[i] = _instance;
+            
         }
-        */
     }
 
    
@@ -63,12 +71,10 @@ public class s_PlayerThrow : MonoBehaviour
         }
         
         CalculateThrow();
-        
-        if (_throwObject)
-        {
-            
-            
 
+        if (Time.time > _currentCooldown && _canThrow == false)
+        {
+            _canThrow = true;
         }
     }
 
@@ -95,22 +101,35 @@ public class s_PlayerThrow : MonoBehaviour
         Vector3 velocityVector = direction.normalized * velocityXZ;
         velocityVector.y = velocityY;
         
-        Vector3 force = velocityVector * _rockRigidbody.mass;
+        _forceVelocity = velocityVector * _rockRigidbody.mass;
         
-        ShowProjection(force);
-        if (_throwObject)
+        ShowProjection(_forceVelocity);
+       
+        //ThrowObject(force); 
+    }
+
+    private GameObject GetRock()
+    {
+        foreach (var _instance in _rocks)
         {
-            ThrowObject(force);
+            if (!_instance.gameObject.activeInHierarchy)
+            {
+                return _instance;
+            }
         }
+
+        return null;
     }
 
     private void ThrowObject(Vector3 _force)
     {
-        _throwObject = false;
-        var _rock = Instantiate(rockPrefab); 
-        _rock.transform.position = _releasePosition.position;
-        
+        _canThrow = false;
+        _currentCooldown = Time.time + _throwCooldown;
+        var _rock = GetRock();
+        _rock.transform.position = _releasePosition.position; 
+        _rock.SetActive(true);
         _rock.GetComponent<s_Rock>().Create(_force, 5);
+
     }
 
     private void ShowProjection(Vector3 _velocityVector)
@@ -141,7 +160,8 @@ public class s_PlayerThrow : MonoBehaviour
     }
 
     public void OnFireAction(InputAction.CallbackContext context)
-    {
-        _throwObject = context.performed; 
+    { 
+        if(_canThrow)
+            ThrowObject(_forceVelocity);
     }
 }
