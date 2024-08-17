@@ -1,13 +1,16 @@
  
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class s_PlayerThrow : MonoBehaviour
 {
     [Header("Throw Settings")]
     [SerializeField] private float _objectTimeFly = 5f;
     [SerializeField] private Vector3 _destinationPosition = Vector3.zero;
-    [SerializeField] private bool _isFiring;
+    
+    
+    [SerializeField] private bool _throwObject;
     
     [SerializeField] private float _height = 8f; // altura maxima do arco
     [SerializeField] private Transform _releasePosition;
@@ -48,32 +51,30 @@ public class s_PlayerThrow : MonoBehaviour
         */
     }
 
-    private void Fire()
-    {
-        fire = false;
-        
-        var _rock = Instantiate(rockPrefab); 
-        var position = _releasePosition.position;
-        _rock.transform.position = position;
-
-
-            
-        _rock.GetComponent<Rigidbody>().AddForce(new Vector3(10,9,0), ForceMode.Impulse);
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (fire)
-            Fire();
-        
-        if (!playerIsHoldingRock)
+        if (!playerIsHoldingRock) // Se o player n possuir nenhuma pedra, nada acontece
         {
             if(_lineRenderer.enabled) _lineRenderer.enabled = false;
             return;
         }
+        
+        CalculateThrow();
+        
+        if (_throwObject)
+        {
+            
+            
 
+        }
+    }
+
+    // ReSharper disable Unity.PerformanceAnalysis
+    private void CalculateThrow()
+    {
         var position = _releasePosition.position;
         _destinationPosition = _playerAim.GetMouseWorldPosition();
 
@@ -93,27 +94,23 @@ public class s_PlayerThrow : MonoBehaviour
 
         Vector3 velocityVector = direction.normalized * velocityXZ;
         velocityVector.y = velocityY;
-
-        Vector3 force = velocityVector;
         
+        Vector3 force = velocityVector * _rockRigidbody.mass;
         
-        
-       
-        ShowProjection(force); 
-        
-        if (_isFiring)
+        ShowProjection(force);
+        if (_throwObject)
         {
-            
-            _isFiring = false;
-            var _rock = Instantiate(rockPrefab); 
-            _rock.transform.position = position;
-
-
-            
-            _rock.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
-
-
+            ThrowObject(force);
         }
+    }
+
+    private void ThrowObject(Vector3 _force)
+    {
+        _throwObject = false;
+        var _rock = Instantiate(rockPrefab); 
+        _rock.transform.position = _releasePosition.position;
+        
+        _rock.GetComponent<s_Rock>().Create(_force, 5);
     }
 
     private void ShowProjection(Vector3 _velocityVector)
@@ -145,6 +142,6 @@ public class s_PlayerThrow : MonoBehaviour
 
     public void OnFireAction(InputAction.CallbackContext context)
     {
-        _isFiring = context.performed; 
+        _throwObject = context.performed; 
     }
 }
