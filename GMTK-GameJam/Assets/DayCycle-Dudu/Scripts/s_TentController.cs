@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class s_TentController : MonoBehaviour
 {
+    [SerializeField] private Transform eggAmountText;
+    [SerializeField] private Transform eggPlacer;
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private Material dayMaterial;
     [SerializeField] private Material nightMaterial;
@@ -24,5 +26,27 @@ public class s_TentController : MonoBehaviour
         {
             meshRenderer.material = nightMaterial;
         }
+    }
+
+    private void OnTriggerEnter(Collider collider) 
+    {
+        if(collider.gameObject.CompareTag("Player"))
+        {
+            eggAmountText.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if(collider.gameObject.CompareTag("Player"))
+        {
+            eggAmountText.gameObject.SetActive(false);
+        }  
+    }
+
+    public void SetObjectAsChild(Transform objChild)
+    {
+        objChild.parent = eggPlacer;
+        objChild.localPosition = Vector3.zero;
     }
 }

@@ -14,10 +14,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private float dayTime;
     [SerializeField] private float nightTime;
     [SerializeField] private bool isDay;
+    [SerializeField] private int eggAmount;
 
-    [SerializeField] private Transform direcLight;
-    [SerializeField] private Vector3 direcLightDayRotation;
-    [SerializeField] private Vector3 direcLightNightRotation;
+    [SerializeField] private Transform direcLightDay;
+    [SerializeField] private Transform direcLightNight;
+    [SerializeField] private Vector3 direcLightFiftyRotation;
+    [SerializeField] private Vector3 direcLightZeroRotation;
 
     private void Awake() 
     {
@@ -35,7 +37,11 @@ public class GameController : MonoBehaviour
 
         if(isDay)
         {
-            direcLight.rotation = Quaternion.Lerp(direcLight.rotation, Quaternion.Euler(direcLightDayRotation), 0.1f);
+            direcLightDay.gameObject.SetActive(true);
+            direcLightDay.rotation = Quaternion.Lerp(direcLightDay.rotation, Quaternion.Euler(direcLightFiftyRotation), 0.1f);
+            
+            direcLightNight.rotation = Quaternion.Lerp(direcLightNight.rotation, Quaternion.Euler(direcLightZeroRotation), 0.1f);
+            direcLightNight.gameObject.SetActive(false);
 
             if(runningTime > dayTime)
             {
@@ -46,7 +52,11 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            direcLight.rotation = Quaternion.Lerp(direcLight.rotation, Quaternion.Euler(direcLightNightRotation), 0.1f);
+            direcLightDay.gameObject.SetActive(false);
+            direcLightDay.rotation = Quaternion.Lerp(direcLightDay.rotation, Quaternion.Euler(direcLightZeroRotation), 0.1f);
+
+            direcLightNight.rotation = Quaternion.Lerp(direcLightNight.rotation, Quaternion.Euler(direcLightFiftyRotation), 0.1f);
+            direcLightNight.gameObject.SetActive(true);
             
             if(runningTime > nightTime)
             {
@@ -61,6 +71,10 @@ public class GameController : MonoBehaviour
     public bool GetIsDay()
     {
         return isDay;
+    }
+    public void IncreaseEggAmount(int value)
+    {
+        eggAmount += value;
     }
 }
 

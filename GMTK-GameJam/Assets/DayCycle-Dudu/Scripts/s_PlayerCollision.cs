@@ -7,6 +7,7 @@ public class s_PlayerCollision : MonoBehaviour
 {
     public Transform holdPos;
     public Transform objChild;
+    [SerializeField] private Transform eggPlacer; 
 
     private void Start() 
     {
@@ -34,16 +35,31 @@ public class s_PlayerCollision : MonoBehaviour
                 Debug.Log("Colidiu com a Galinha.");
             }
         }
-        if(collisor.gameObject.CompareTag("Tent")) // colisão da tenda por tag
+    }
+
+    private void OnTriggerEnter(Collider collider) 
+    {
+        if(collider.gameObject.CompareTag("Tent")) // colisão da tenda por tag
         {
             Debug.Log("Colidiu com a Tenda.");
+
         }
-        if(collisor.gameObject.CompareTag("EggPlacer")) // colisão da tenda por tag
+        if(collider.gameObject.CompareTag("EggPlacer")) // colisão da tenda por tag
         {
             Debug.Log("Colidiu com o Egg Placer da Tenda.");
             
-            objChild.parent = collisor.transform.GetChild(0);
-            objChild.transform.localPosition = Vector3.zero;
+            if(objChild != null)
+            {
+                objChild.parent = collider.transform;
+
+                float multiplier = UnityEngine.Random.Range(0, 1.5f);
+                objChild.localPosition = Vector3.one*multiplier;
+                objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                objChild = null;
+                // objChild.parent = collider.transform.GetChild(0);
+                
+                GameController.Instance.IncreaseEggAmount(1);
+            }
         }
     }
 }

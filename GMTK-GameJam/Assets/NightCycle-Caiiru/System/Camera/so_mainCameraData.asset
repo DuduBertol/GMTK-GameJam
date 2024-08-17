@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPositionOffset: {x: 0, y: 30, z: -50}
   cameraRotationOffset: {x: 30, y: 0, z: 0}
-  cameraLerpTime: 0.355
+  cameraLerpTime: 0.372
