@@ -39,9 +39,9 @@ public class s_enemySpawnerController : MonoBehaviour
         for(int i = 0; i<_value; i++)
         {
             var _enemy = GetEnemy();
-            _enemy.gameObject.SetActive(true);
             _enemy.transform.position = _position;
-            _enemy.GetComponent<s_enemyController>().SetDestination(targetTransform);
+            _enemy.gameObject.SetActive(true);
+            //_enemy.GetComponent<s_enemyController>().SetDestination(targetTransform);
         }
     }
 

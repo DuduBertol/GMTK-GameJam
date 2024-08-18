@@ -81,8 +81,7 @@ public class s_PlayerThrow : MonoBehaviour
             _canThrow = true;
         }
     }
-
-    // ReSharper disable Unity.PerformanceAnalysis
+ 
     private void CalculateThrow()
     {
         var position = _releasePosition.position;
