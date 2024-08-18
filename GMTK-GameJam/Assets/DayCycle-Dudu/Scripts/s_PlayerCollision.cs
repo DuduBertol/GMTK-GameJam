@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class s_PlayerCollision : MonoBehaviour
 {
     public Transform holdPos;
     public Transform objChild;
-    [SerializeField] private bool overlappingTent;
-    [SerializeField] private bool overlappingBeanTree;
+    public bool overlappingTent;
+    public bool overlappingBeanTree;
+
+    private Transform tentTransform;
+
     // [SerializeField] private Transform eggPlacer; 
 
     private void Start() 
@@ -19,22 +23,16 @@ public class s_PlayerCollision : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        if(overlappingTent)
-        {
-            int priceFake = 3;
-
-            int eggAmount = GameController.Instance.GetEggAmount();
-
-            if(eggAmount >= priceFake)
-            {
-                Debug.Log("Você gastou ovos.");
-                GameController.Instance.SetEggAmount(eggAmount -= priceFake);
-            };
-        }
-
         if(overlappingBeanTree)
         {
-            GameController.Instance.IncreaseBeanTree();
+            if(objChild != null && objChild.GetComponent<s_GettableObject>().objectType == s_GettableObject.ObjectType.Fertilizer)
+            {
+                GameController.Instance.IncreaseBeanTree();
+                
+                Transform transformChild = objChild;
+                ClearPlayerObjectChild();
+                Destroy(transformChild.gameObject);
+            }
         }
     }
 
@@ -49,6 +47,8 @@ public class s_PlayerCollision : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Tent"))
         {
+            tentTransform = collider.transform;
+
             overlappingTent = true;
             Debug.Log("Colidiu com a Tenda.");
         }
@@ -67,8 +67,8 @@ public class s_PlayerCollision : MonoBehaviour
                 
                 objChild = null;
                 
-                int eggAmount = GameController.Instance.GetEggAmount();
-                GameController.Instance.SetEggAmount(eggAmount++);
+                GameController.Instance.eggAmount++;
+                tentTransform.gameObject.GetComponent<s_TentController>().UpdateTextVisual();
             }
         }
 

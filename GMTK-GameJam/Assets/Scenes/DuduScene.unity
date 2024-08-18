@@ -1449,6 +1449,9 @@ MonoBehaviour:
   nightTime: 5
   isDay: 1
   eggAmount: 0
+  beanTree: {fileID: 631022363}
+  scaleMultiplier: 0.5
+  beanXZScaleMax: 4
   direcLightDay: {fileID: 410087041}
   direcLightNight: {fileID: 431917393}
   direcLightFiftyRotation: {x: 50, y: -30, z: 0}
@@ -1484,6 +1487,7 @@ Transform:
   m_Children:
   - {fileID: 770276660}
   - {fileID: 1798354824}
+  - {fileID: 1939836753}
   - {fileID: 1062866860}
   - {fileID: 1394704250}
   m_Father: {fileID: 0}
@@ -1571,6 +1575,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539344457}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &631022363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 168000892580294728, guid: f5060ea74d94bfd4195c5eaf733ca6bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1427073006089074635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693496136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,9 +1949,9 @@ Rigidbody:
     serializedVersion: 2
     m_Bits: 0
   m_ImplicitCom: 1
-  m_ImplicitTensor: 1
+  m_ImplicitTensor: 0
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -2646,7 +2656,6 @@ Transform:
   m_Children:
   - {fileID: 891798963}
   - {fileID: 163426338}
-  - {fileID: 1902265047}
   m_Father: {fileID: 506391381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1062866861
@@ -2661,8 +2670,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfeec1bdb9036a4f9de31b88744ff7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eggAmountText: {fileID: 180566358}
-  eggPlacer: {fileID: 0}
+  spawnTradePlacer: {fileID: 1939836753}
+  eggAmountTextTransform: {fileID: 180566358}
+  eggAmountText: {fileID: 180566359}
+  fertilizerPrice: 3
+  fertilizerPrefab: {fileID: 113914837288236498, guid: c2c275d5518bf9e4e85e2ffb2327f6c0,
+    type: 3}
   meshRenderer: {fileID: 1062866858}
   dayMaterial: {fileID: 2100000, guid: 6182cf200d8f4d04197306aa1944770f, type: 2}
   nightMaterial: {fileID: 2100000, guid: 294ef804b7029be4aaa1b7a881ec2c62, type: 2}
@@ -3476,7 +3489,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3418b5108d569a54a8efe5e484d02425, type: 3}
---- !u!1 &1902265046
+--- !u!1 &1939836752
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3484,28 +3497,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1902265047}
+  - component: {fileID: 1939836753}
   m_Layer: 0
-  m_Name: ItemDropper
+  m_Name: TentSpawnPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1902265047
+--- !u!4 &1939836753
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902265046}
+  m_GameObject: {fileID: 1939836752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.36197454, z: -0.71086586}
+  m_LocalPosition: {x: -53.5, y: 7.5, z: 12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1062866860}
+  m_Father: {fileID: 506391381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991190968
 GameObject:
@@ -3532,7 +3545,7 @@ Transform:
   m_GameObject: {fileID: 1991190968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: 0, y: 1.6500001, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

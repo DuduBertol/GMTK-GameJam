@@ -24,7 +24,7 @@ public class s_GoldenChicken : MonoBehaviour
             eggTransform.parent = null;
         }
 
-        goldenEggLastScale += new Vector3(scaleAmountToIncrease, scaleAmountToIncrease, scaleAmountToIncrease);
-        goldenEggPrefab.transform.localScale = goldenEggLastScale;
+        // goldenEggLastScale += new Vector3(scaleAmountToIncrease, scaleAmountToIncrease, scaleAmountToIncrease);
+        // goldenEggPrefab.transform.localScale = goldenEggLastScale;
     }
 }

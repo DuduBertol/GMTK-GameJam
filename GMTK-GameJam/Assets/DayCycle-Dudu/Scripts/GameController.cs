@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private bool isDay;
 
     [Header("Eggs")]
-    [SerializeField] private int eggAmount;
+    public int eggAmount;
     
     [Header("Bean Tree")]
     [SerializeField] private Transform beanTree;
@@ -81,14 +81,14 @@ public class GameController : MonoBehaviour
     {
         return isDay;
     }
-    public int GetEggAmount()
+    /* public int GetEggAmount()
     {
         return eggAmount;
     }
     public void SetEggAmount(int value)
     {
         eggAmount = value;
-    }
+    } */
 
     public void IncreaseBeanTree()
     {

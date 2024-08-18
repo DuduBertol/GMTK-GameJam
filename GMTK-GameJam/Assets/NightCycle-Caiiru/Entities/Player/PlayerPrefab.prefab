@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementInput: {x: 0, y: 0, z: 0}
-  _movementSpeed: 7
+  _movementSpeed: 10
 --- !u!114 &402396430205224018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   holdPos: {fileID: 7946664865041655228}
   objChild: {fileID: 0}
   overlappingTent: 0
+  overlappingBeanTree: 0
 --- !u!114 &4638306945361046042
 MonoBehaviour:
   m_ObjectHideFlags: 0
