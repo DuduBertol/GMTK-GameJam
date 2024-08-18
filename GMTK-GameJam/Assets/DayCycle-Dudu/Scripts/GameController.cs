@@ -102,5 +102,10 @@ public class GameController : MonoBehaviour
             beanTree.localPosition = new Vector3(0, beanTree.localScale.y - 2, 0);
         }
     }
+
+    public float GetTimeReason()
+    {
+        return runningTime / dayTime;
+    }
 }
 

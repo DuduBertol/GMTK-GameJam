@@ -10,22 +10,22 @@ public class s_TentController : MonoBehaviour
     [SerializeField] private Transform spawnTradePlacer;
     
     [Header("Egg Amount")]
-    [SerializeField] private Transform eggAmountTextTransform;
+    [SerializeField] private Transform tentInfosToShow;
     [SerializeField] private TextMeshProUGUI eggAmountText;
 
     [Header("Fertilizer")]
     [SerializeField] private int fertilizerPrice;
     [SerializeField] private Transform fertilizerPrefab;
     
-    [Header("Others")]
+    /* [Header("Others")]
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private Material dayMaterial;
-    [SerializeField] private Material nightMaterial;
+    [SerializeField] private Material nightMaterial; */
     private Transform playerTransform;
 
     private void Start() 
     {
-        GameController.Instance.OnDayNightChanged += GameController_OnDayNightChanged;
+        // GameController.Instance.OnDayNightChanged += GameController_OnDayNightChanged;
         GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
     }
 
@@ -44,7 +44,7 @@ public class s_TentController : MonoBehaviour
         }
     }
 
-    private void GameController_OnDayNightChanged(object sender, EventArgs e)
+    /* private void GameController_OnDayNightChanged(object sender, EventArgs e)
     {
         if(GameController.Instance.GetIsDay())
         {
@@ -54,7 +54,7 @@ public class s_TentController : MonoBehaviour
         {
             meshRenderer.material = nightMaterial;
         }
-    }
+    } */
 
     private void OnTriggerEnter(Collider collider) 
     {
@@ -62,7 +62,7 @@ public class s_TentController : MonoBehaviour
         {
             playerTransform = collider.transform;
 
-            eggAmountText.gameObject.SetActive(true);
+            tentInfosToShow.gameObject.LeanScale(Vector3.one, .5f);
             UpdateTextVisual();
         }
     }
@@ -71,7 +71,7 @@ public class s_TentController : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player"))
         {
-            eggAmountText.gameObject.SetActive(false);
+            tentInfosToShow.gameObject.LeanScale(Vector3.zero, .5f);
         }  
     }
 
@@ -83,6 +83,6 @@ public class s_TentController : MonoBehaviour
 
     public void UpdateTextVisual()
     {
-        eggAmountText.text = "Egg Amount: " + GameController.Instance.eggAmount.ToString();
+        eggAmountText.text = GameController.Instance.eggAmount.ToString();
     }
 }

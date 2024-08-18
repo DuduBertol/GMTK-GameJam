@@ -75,6 +75,7 @@ public class s_PlayerCollision : MonoBehaviour
         if(collider.gameObject.CompareTag("BeanTree"))
         {
             overlappingBeanTree = true;
+            collider.transform.parent.parent.GetComponent<s_BeanTreeController>().ToggleLeanText(true);
         }
     }
 
@@ -87,6 +88,7 @@ public class s_PlayerCollision : MonoBehaviour
         if(collider.gameObject.CompareTag("BeanTree"))
         {
             overlappingBeanTree = false;
+            collider.transform.parent.parent.GetComponent<s_BeanTreeController>().ToggleLeanText(false);
         }
     }
 
