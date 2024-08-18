@@ -10,12 +10,21 @@ public class GameController : MonoBehaviour
 
     public event EventHandler OnDayNightChanged;
 
+    [Header("General")]
     [SerializeField] private float runningTime;
     [SerializeField] private float dayTime;
     [SerializeField] private float nightTime;
     [SerializeField] private bool isDay;
-    [SerializeField] private int eggAmount;
 
+    [Header("Eggs")]
+    [SerializeField] private int eggAmount;
+    
+    [Header("Bean Tree")]
+    [SerializeField] private Transform beanTree;
+    [SerializeField] private float scaleMultiplier;
+    [SerializeField] private float beanXZScaleMax;
+
+    [Header("Lightning")]
     [SerializeField] private Transform direcLightDay;
     [SerializeField] private Transform direcLightNight;
     [SerializeField] private Vector3 direcLightFiftyRotation;
@@ -79,6 +88,19 @@ public class GameController : MonoBehaviour
     public void SetEggAmount(int value)
     {
         eggAmount = value;
+    }
+
+    public void IncreaseBeanTree()
+    {
+        if(beanTree.localScale.x <= beanXZScaleMax)
+        {
+            beanTree.localScale += Vector3.one * scaleMultiplier;
+        }
+        else
+        {
+            beanTree.localScale += Vector3.up * scaleMultiplier;
+            beanTree.localPosition = new Vector3(0, beanTree.localScale.y - 2, 0);
+        }
     }
 }
 

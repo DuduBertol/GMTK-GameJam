@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GoldenEgg
   - Tent
   - Enemy
+  - EggPlacer
+  - BeanTree
   layers:
   - Default
   - TransparentFX

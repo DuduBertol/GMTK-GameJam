@@ -40,6 +40,17 @@ public class s_PlayerController : MonoBehaviour
             //_rigidbody.velocity = (_movementInput * (_movementSpeed * Time.fixedDeltaTime));
             _rigidbody.MovePosition(_rigidbody.position + _movementInput.normalized * (Time.deltaTime * _movementSpeed));
         }
+
+        if(_movementInput.x < 0)
+        {
+            LeanTween.rotateY(gameObject, 180, 0.25f);
+            // gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else if (_movementInput.x > 0)
+        {
+            LeanTween.rotateY(gameObject, 0, 0.25f);
+            // gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
     }
  
 }

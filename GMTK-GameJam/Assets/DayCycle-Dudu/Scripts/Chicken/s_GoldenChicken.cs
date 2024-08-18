@@ -19,15 +19,9 @@ public class s_GoldenChicken : MonoBehaviour
     {
         if(GameController.Instance.GetIsDay())
         {
-            if(eggSpawner.childCount == 0) //Spawner de ovos não possui filho, logo posso spawnar outro
-            {
-                Transform eggTransform = Instantiate(goldenEggPrefab, eggSpawner);
-                eggTransform.localPosition = Vector3.up * 3;
-            }
-            else
-            {
-                Debug.Log("Não foi possível spawnar o ovo. Já existe um nessa posição.");
-            }
+            Transform eggTransform = Instantiate(goldenEggPrefab, eggSpawner);
+            eggTransform.localPosition = Vector3.zero;
+            eggTransform.parent = null;
         }
 
         goldenEggLastScale += new Vector3(scaleAmountToIncrease, scaleAmountToIncrease, scaleAmountToIncrease);

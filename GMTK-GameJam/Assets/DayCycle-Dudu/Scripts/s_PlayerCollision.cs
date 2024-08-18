@@ -8,7 +8,8 @@ public class s_PlayerCollision : MonoBehaviour
     public Transform holdPos;
     public Transform objChild;
     [SerializeField] private bool overlappingTent;
-    [SerializeField] private Transform eggPlacer; 
+    [SerializeField] private bool overlappingBeanTree;
+    // [SerializeField] private Transform eggPlacer; 
 
     private void Start() 
     {
@@ -21,6 +22,7 @@ public class s_PlayerCollision : MonoBehaviour
         if(overlappingTent)
         {
             int priceFake = 3;
+
             int eggAmount = GameController.Instance.GetEggAmount();
 
             if(eggAmount >= priceFake)
@@ -29,65 +31,80 @@ public class s_PlayerCollision : MonoBehaviour
                 GameController.Instance.SetEggAmount(eggAmount -= priceFake);
             };
         }
+
+        if(overlappingBeanTree)
+        {
+            GameController.Instance.IncreaseBeanTree();
+        }
     }
 
     private void GameInput_OnDropAction(object sender, EventArgs e)
     {
-        objChild.parent = null;
-        objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        objChild = null;
+        ClearPlayerObjectChild();
     }
 
 
-    private void OnCollisionEnter(Collision collisor) 
-    {
-        if(collisor.gameObject.CompareTag("GoldenEgg")) //colisão dos ovos de ouro por tag
-        {
-            if(objChild == null)
-            {
-                objChild = collisor.transform;
-                collisor.transform.parent = holdPos;
-                collisor.transform.localPosition = Vector3.zero;
-                collisor.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                Debug.Log("Colidiu com a Galinha.");
-            }
-        }
-    }
 
     private void OnTriggerEnter(Collider collider) 
     {
-        if(collider.gameObject.CompareTag("Tent")) // colisão da tenda por tag
+        if(collider.gameObject.CompareTag("Tent"))
         {
             overlappingTent = true;
             Debug.Log("Colidiu com a Tenda.");
         }
 
-        if(collider.gameObject.CompareTag("EggPlacer")) // colisão da tenda por tag
+        if(collider.gameObject.CompareTag("EggPlacer"))
         {
             Debug.Log("Colidiu com o Egg Placer da Tenda.");
             
-            if(objChild != null)
+            if(objChild != null && objChild.gameObject.GetComponent<s_GettableObject>().objectType == s_GettableObject.ObjectType.GoldenEgg)
             {
                 objChild.parent = collider.transform;
+                objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
                 float multiplier = UnityEngine.Random.Range(0, 1.5f);
                 objChild.localPosition = Vector3.one*multiplier;
-                objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                
                 objChild = null;
-                // objChild.parent = collider.transform.GetChild(0);
                 
                 int eggAmount = GameController.Instance.GetEggAmount();
                 GameController.Instance.SetEggAmount(eggAmount++);
             }
         }
+
+        if(collider.gameObject.CompareTag("BeanTree"))
+        {
+            overlappingBeanTree = true;
+        }
     }
 
     private void OnTriggerExit(Collider collider) 
     {
-        if(collider.gameObject.CompareTag("Tent")) // colisão da tenda por tag
+        if(collider.gameObject.CompareTag("Tent"))
         {
             overlappingTent = false;
-            Debug.Log("Saiu de colisão com a Tenda.");
         }
+        if(collider.gameObject.CompareTag("BeanTree"))
+        {
+            overlappingBeanTree = false;
+        }
+    }
+
+    public void SetPlayerObjectChild(Transform transformChild)
+    {
+        if(objChild != null) return;
+
+        objChild = transformChild;
+                
+        objChild.parent = holdPos;
+        objChild.localPosition = Vector3.zero;
+        objChild.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+    }
+    public void ClearPlayerObjectChild()
+    {
+        objChild.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+        objChild.parent = null;
+        objChild = null;
     }
 }
