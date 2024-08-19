@@ -6,8 +6,7 @@ using UnityEngine.Serialization;
 public class s_PlayerThrow : MonoBehaviour
 {
     [Header("Throw Settings")] [SerializeField]
-    private bool _canThrow = false;
-    private float _objectTimeFly = 5f;
+    private bool _canThrow = false; 
     private Vector3 _forceVelocity;
     [SerializeField] private Vector3 _destinationPosition = Vector3.zero;
     [SerializeField] private float _height = 8f; // altura maxima do arco
