@@ -107,15 +107,7 @@ public class GameController : MonoBehaviour
 
     public void IncreaseBeanTree()
     {
-        if(beanTree.localScale.x <= beanXZScaleMax)
-        {
-            beanTree.localScale += Vector3.one * scaleMultiplier;
-        }
-        else
-        {
-            beanTree.localScale += Vector3.up * scaleMultiplier;
-            beanTree.localPosition = new Vector3(0, beanTree.localScale.y - 2, 0);
-        }
+        beanTree.gameObject.GetComponent<s_BeanTreeController>().UpdateBeanTreeVisual();
     }
 
     public float GetTimeReason()

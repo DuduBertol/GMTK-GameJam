@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - EggPlacer
   - BeanTree
+  - WinGame
   layers:
   - Default
   - TransparentFX
