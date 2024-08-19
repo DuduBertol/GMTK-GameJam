@@ -14,6 +14,8 @@ public class s_EnemyStats : ScriptableObject
     public float movementRate;
     public float stoppingDistance;
 
+    public float visionRange;
+
     [Space(5)] [Header("Attack Settings")] 
     public float attackRange;
     public float attackRate;

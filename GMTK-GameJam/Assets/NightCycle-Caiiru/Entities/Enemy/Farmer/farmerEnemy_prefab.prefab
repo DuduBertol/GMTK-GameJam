@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
-  currentState: {fileID: 11400000, guid: 53514765e6ef60045926708f18cac0c8, type: 2}
+  currentState: {fileID: 11400000, guid: a3401c2ff37e2df4e9e9301dd992fc89, type: 2}
   remainInState: {fileID: 11400000, guid: 9c3db51cf095cba4c86a1c73c882b1de, type: 2}
   target: {fileID: 0}
   attackManager: {fileID: 0}

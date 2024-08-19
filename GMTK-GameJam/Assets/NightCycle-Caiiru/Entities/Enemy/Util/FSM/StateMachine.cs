@@ -18,13 +18,14 @@ public class StateMachine : MonoBehaviour
     [Space(5)]
     public bool aiActive;
 
+    [Header("Debug")]
     public bool drawSphere;
     [HideInInspector] public NavMeshAgent agent;
     [HideInInspector] public float stateTimeElapsed;
 
-    private void Awake()
+    void Awake()
     {
-        target = GameController.Instance.GetPlayer().transform;// TIRAR ISSO DEPOIS
+        //target = GameController.Instance.GetPlayer().transform;// TIRAR ISSO DEPOIS
         agent = transform.GetComponent<NavMeshAgent>();
         attackManager = transform.GetComponent<s_EnemyAttackManager>();
     }
@@ -66,6 +67,9 @@ public class StateMachine : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-         
+         if(drawSphere){
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(agent.transform.position, stats.visionRange);
+         }
     }
 }
