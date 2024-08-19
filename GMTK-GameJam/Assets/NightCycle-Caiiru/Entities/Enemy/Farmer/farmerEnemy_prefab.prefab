@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9003927998751312948}
   - component: {fileID: 7033516390988522850}
-  - component: {fileID: 196868288005740431}
   - component: {fileID: 7899102411846478844}
   - component: {fileID: 4216604851857430466}
   - component: {fileID: 7534897617516135556}
@@ -56,22 +55,6 @@ MonoBehaviour:
     type: 3}
   projectiles: []
   projectileCount: 3
---- !u!114 &196868288005740431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690298607663099867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fdea09308ecbb4e97a6a733251029e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 5
-  currentHP: 0
-  _hitParticle: {fileID: 1723208242672122365}
-  takeDamageButton: 0
 --- !u!114 &7899102411846478844
 MonoBehaviour:
   m_ObjectHideFlags: 0

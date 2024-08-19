@@ -12,6 +12,12 @@ public class FindNewTargetAction : IAction
     {
         FindNewTarget(stateMachine);
     }
+
+    public override void Enter(StateMachine stateMachine)
+    {
+       
+    }
+
     private void FindNewTarget(StateMachine stateMachine)
     {
         RaycastHit[] _result = new RaycastHit[10];

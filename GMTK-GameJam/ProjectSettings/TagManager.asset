@@ -8,7 +8,7 @@ TagManager:
   - Enemy
   - EggPlacer
   - BeanTree
-  - WinGame
+  - Defense
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - FloorLayer
   - Projectiles
   - Enemy
-  - 
+  - Defense
   - 
   - 
   - 

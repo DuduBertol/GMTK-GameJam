@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd846ec5019b7641adf4c8177f9e0b9, type: 3}
   m_Name: FarmerStats
   m_EditorClassIdentifier: 
+  name: Farmer
   currentHP: 10
   maxHP: 10
   movementSpeed: 5
   movementRate: 1
-  stoppingDistance: 2
+  stoppingDistance: 3
   visionRange: 600
   attackRange: 3
   attackRate: 0.5
   attackDamage: 1
+  mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: d8aa536c4e7c24b469decaa5909ba9a1, type: 2}

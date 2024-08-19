@@ -11,9 +11,7 @@ public class s_EnemyAttackManager : MonoBehaviour
   
     private float _nextFireTime;
 
-    [Header("Pool Settings")]  
-    public GameObject attackProjectile;
-    public GameObject[] projectiles;
+    [Header("Pool Settings")]   
     public int projectileCount;
     public void Attack(Vector3 direction, float damage, float fireRate)
     {
@@ -32,31 +30,9 @@ public class s_EnemyAttackManager : MonoBehaviour
     }
     void Start()
     {
-        if (attackProjectile == null)
-        {
-            Debug.LogError($"{this.transform.name} dont have any projectiles");
-            return;
-        }
-
-        projectiles = new GameObject[projectileCount];
-        for (int i = 0; i < projectileCount; i++)
-        {
-            var _instance = Instantiate(attackProjectile, this.transform);
-            _instance.gameObject.SetActive(false);
-            projectiles[i] = _instance;
-        }
+         
     }
-
-    private GameObject GetProjectile()
-    {
-        foreach(var projectile in projectiles){
-            if (!projectile.gameObject.activeInHierarchy)
-            {
-                return projectile;
-            }
-        }
-        return null;
-    }
+ 
 
     // Update is called once per frame
     void Update()

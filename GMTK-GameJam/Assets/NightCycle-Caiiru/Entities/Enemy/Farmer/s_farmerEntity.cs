@@ -6,7 +6,6 @@ using UnityEngine;
 public class s_farmerEntity : EnemyEntity
 {
     [Header("Take Damage")]
-    public ParticleSystem _hitParticle;
 
     [Header("Debug")] public bool takeDamageButton = false;
 
@@ -24,7 +23,6 @@ public class s_farmerEntity : EnemyEntity
     {
         base.TakeDamage(_damage);
        
-        _hitParticle.Play();
         
     }
 

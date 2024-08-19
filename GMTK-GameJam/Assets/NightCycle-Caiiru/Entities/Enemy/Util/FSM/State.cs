@@ -7,6 +7,12 @@ public class State : ScriptableObject
 {
     public IAction[] actions;
     public Transition[] transitions;
+    
+    public void EnterState(StateMachine stateMachine){
+        foreach(var action in actions){
+            action.Enter(stateMachine);
+        }
+    }
     public void UpdateState(StateMachine stateMachine)
     {
         DoActions(stateMachine);

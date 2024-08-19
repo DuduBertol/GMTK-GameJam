@@ -42,7 +42,7 @@ public class s_Projectile : MonoBehaviour
     { 
         Debug.Log($"Trigger {other.transform.name}");
         
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Defense"))
         {
             other.transform.GetComponent<Entity>().TakeDamage(projectileDamage);
            
