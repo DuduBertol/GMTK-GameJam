@@ -5,83 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd7e07b-d6a2-4f1e-94b8-39d0bb314732" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Attack/EnemyProjectilePrefab.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Attack/EnemyProjectilePrefab.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Attack/s_EnemyAttackManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/AttackAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/ChaseAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decisions/LookDecision.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decisions/LookDecision.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/ActiveStateDecision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/ActiveStateDecision.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/AttackLookDecision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/AttackLookDecision.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/LookDecision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode/LookDecision.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/IAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/IAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/FindNewTargetState.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/FindNewTargetState.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/RemainInState.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/RemainInState.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Projectiles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Projectiles/s_Projectile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Projectiles/s_Projectile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/placeholder/s_dummyEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/placeholder/s_dummyEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/s_EnemyStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/s_EnemyStats.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Environment.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Environment/s_doorEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Environment/s_doorEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Environment/placeholder/materials/m_doorMaterial_placeholder.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Environment/placeholder/materials/m_doorMaterial_placeholder.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/System/Enemies/s_enemyProjectilesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/System/Enemies/s_enemyProjectilesController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK-GameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK-GameJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DayCycle-Dudu/Materials/WallEggs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DayCycle-Dudu/Materials/WallEggs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/FarmerStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/FarmerStats.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/farmerEnemy_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/farmerEnemy_prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/s_farmerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/s_farmerEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/HaveTargetCondition.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/AttackAction.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/HaveTargetCondition.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/ChaseAction.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/TargetInRangeCondition.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/ChaseAction.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/TargetInRangeCondition.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/AttackAction.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/TargetOutsideRangeCondition.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decisions/ActiveStateDecision.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Conditions/TargetOutsideRangeCondition.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decisions/ActiveStateDecision.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/FindNewTargetAction.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Actions/FindNewTargetAction.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/ChaseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/ChaseAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/AttackState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/AttackState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/ChaseState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/ChaseState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/IdleState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/IdleState.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/FarmerStats.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/AttackState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/AttackState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Attack/s_EnemyAttackManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/ChaseState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/ChaseState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/AttackAction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/IdleState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/StatesCodes/IdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/ActionsCode/ChaseAction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decisions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition/toAttackTransition.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition/toAttackTransition.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition/toChaseTransition.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Farmer/FarmerStats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Transition/toChaseTransition.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/DecisionsCode.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Chase.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Chase/TargetInRangeCondition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Chase/TargetInRangeCondition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/Decision.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Chase/TargetOutsideRangeCondition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Chase/TargetOutsideRangeCondition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Idle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Idle/HaveTargetCondition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/TrasitionCodes/Idle/HaveTargetCondition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/s_enemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/s_enemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/FindNewTargetState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/FSM/States/FindNewTargetState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Projectiles/s_Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Enemy/Util/Projectiles/s_Projectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Player/Material/m_enemyMaterial_placeholder.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/Entities/Player/Material/m_enemyMaterial_placeholder.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/System/Enemies/s_enemySpawnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NightCycle-Caiiru/System/Enemies/s_enemySpawnerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CaiiruScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CaiiruScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DuduScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DuduScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +136,7 @@
       <workItem from="1724044324401" duration="147000" />
       <workItem from="1724044991037" duration="594000" />
       <workItem from="1724045868319" duration="216000" />
+      <workItem from="1724052267542" duration="1776000" />
     </task>
     <servers />
   </component>

@@ -40,12 +40,14 @@ public class s_Projectile : MonoBehaviour
     
     public void OnTriggerEnter(UnityEngine.Collider other)
     { 
+        Debug.Log($"Trigger {other.transform.name}");
+        
         if (other.gameObject.CompareTag("Player"))
         {
             other.transform.GetComponent<Entity>().TakeDamage(projectileDamage);
            
+            _isActive=false;
+            this.gameObject.SetActive(false);
         } 
-        _isActive=false;
-        this.gameObject.SetActive(false);
     } 
 }

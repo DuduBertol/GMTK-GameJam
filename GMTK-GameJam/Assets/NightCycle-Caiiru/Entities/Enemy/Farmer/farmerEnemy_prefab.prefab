@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4216604851857430466}
   - component: {fileID: 7534897617516135556}
   - component: {fileID: 2746728283880535455}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: farmerEnemy_prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
   currentState: {fileID: 11400000, guid: a3401c2ff37e2df4e9e9301dd992fc89, type: 2}
+  firstState: {fileID: 11400000, guid: a3401c2ff37e2df4e9e9301dd992fc89, type: 2}
   remainInState: {fileID: 11400000, guid: 9c3db51cf095cba4c86a1c73c882b1de, type: 2}
   target: {fileID: 0}
   attackManager: {fileID: 0}
@@ -133,7 +134,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -152,7 +153,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 690298607663099867}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.27
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -177,7 +178,7 @@ GameObject:
   - component: {fileID: 4611494519708473711}
   - component: {fileID: 4207108338527346986}
   - component: {fileID: 4508825016148660433}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +284,7 @@ GameObject:
   - component: {fileID: 5781676587095994819}
   - component: {fileID: 1723208242672122365}
   - component: {fileID: 4298679996823255606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: vfx_entityHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

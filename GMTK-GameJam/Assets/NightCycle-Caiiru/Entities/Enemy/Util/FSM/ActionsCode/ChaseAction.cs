@@ -14,9 +14,10 @@ public class ChaseAction : IAction
         if (stateMachine.target == null) return;
         if (!stateMachine.CheckIfCountDownElapsed(stateMachine.stats.movementRate))
             return;
-        stateMachine.agent.destination = stateMachine.target.position;
+        var _offset = Random.Range(-2, 2);
+        stateMachine.agent.destination =  (stateMachine.target.position + new Vector3(_offset, 0, 0));
         stateMachine.agent.isStopped = false;
-        if (stateMachine.agent.remainingDistance <= stateMachine.agent.stoppingDistance)
+        if (stateMachine.agent.remainingDistance < stateMachine.agent.stoppingDistance-0.5f)
         {
             stateMachine.agent.isStopped = true;
         }
