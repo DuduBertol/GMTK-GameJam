@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class s_farmerEntity : Entity
+public class s_farmerEntity : EnemyEntity
 {
     [Header("Take Damage")]
     public ParticleSystem _hitParticle;
@@ -31,7 +31,7 @@ public class s_farmerEntity : Entity
     public override void Die()
     {
         base.Die();
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -42,4 +42,4 @@ public class s_farmerEntity : Entity
             TakeDamage(1);
         }
     }
-}
+} 

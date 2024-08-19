@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class s_enemySpawnerController : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPosition;
-    [SerializeField] private List<GameObject> enemiesPrefab;
-    [SerializeField] private int _enemiesCount = 2;
-    [SerializeField] private bool spawningEnemies = false;
     
-    [SerializeField] private GameObject[] _enemiesPool;
-
+    [Header("Spawn Enemies")]
+    [SerializeField][Tooltip("How much to spawn")] 
+    private int _enemiesCount;
+    [SerializeField] private float _timeBetweenEachSpawn = 0.1f;
+    [SerializeField] private int _spawnCount = 0;
+    [SerializeField] private bool spawningEnemies = false;
+    private float _lastSpawnTime;
+    [Header("Enemy Pool")]
+    [SerializeField] private List<GameObject> enemiesPrefab;
+    private GameObject[] _enemiesPool;
 
     [Header("Editor only")] public bool poolActive;
     void Start()
@@ -27,8 +33,9 @@ public class s_enemySpawnerController : MonoBehaviour
             _instance.gameObject.SetActive(false);
         }
         
-        SpawnEnemies(_enemiesCount, _spawnPosition.position, GameController.Instance.GetPlayer().transform);
-    }
+        //SpawnEnemies(_enemiesCount, _spawnPosition.position, GameController.Instance.GetPlayer().transform);
+
+    } 
 
     public void SpawnEnemies(int _value, Vector3 _position, [CanBeNull] Transform targetTransform )
     {
@@ -49,6 +56,17 @@ public class s_enemySpawnerController : MonoBehaviour
         }
     }
 
+    public void SpawnEnemy(Vector3 _position){
+        _spawnCount -= 1;
+        spawningEnemies = _spawnCount <= 0 ? false : true;
+        _lastSpawnTime = Time.time + _timeBetweenEachSpawn;
+
+        var _enemy = GetEnemy();
+        _enemy.transform.position = _position;
+        _enemy.transform.GetComponent<StateMachine>().StartStateMachine();
+        _enemy.gameObject.SetActive(true); 
+    }
+
     public GameObject GetEnemy()
     {
         foreach (var _instance in _enemiesPool)
@@ -65,11 +83,13 @@ public class s_enemySpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawningEnemies)
-        {
-            spawningEnemies = false;
-            SpawnEnemies(_enemiesCount, _spawnPosition.position, null);
-        }
+        if(!spawningEnemies || _spawnCount <= 0) return;
+
+        if(Time.time < _lastSpawnTime) return;
+
+        //SpawnEnemies(_enemiesCount, _spawnPosition.position, null);
+        SpawnEnemy(_spawnPosition.position);
+
         
     }
 }

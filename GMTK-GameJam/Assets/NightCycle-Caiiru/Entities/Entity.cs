@@ -17,7 +17,7 @@ public abstract class Entity : MonoBehaviour
         this.currentHP = currentHP - _damage <= 0 ? 0 : currentHP - _damage;
         
         var _popupDamage = s_popupManager.Instance.GetPopoup();
-        _popupDamage.transform.position = this.transform.position;
+        _popupDamage.transform.position = this.transform.position + new Vector3(0,transform.localScale.y/2,0);
         _popupDamage.gameObject.SetActive(true);
         _popupDamage.GetComponent<s_popupController>().Create(_damage.ToString());
         

@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 10
   maxHP: 10
-  movementSpeed: 3
+  movementSpeed: 5
   movementRate: 1
-  stoppingDistance: 1
-  attackRange: 2
+  stoppingDistance: 2
+  visionRange: 600
+  attackRange: 3
   attackRate: 0.5
   attackDamage: 1

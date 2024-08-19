@@ -11,10 +11,12 @@ public class StateMachine : MonoBehaviour
     [Space(10)]
     [Header("State Machine Settings")]
     public State currentState;
-
+    public State firstState;
     public State remainInState;
     public Transform target;
     public s_EnemyAttackManager attackManager;
+    
+    
     [Space(5)]
     public bool aiActive;
 
@@ -44,6 +46,17 @@ public class StateMachine : MonoBehaviour
         agent.stoppingDistance = stats.stoppingDistance;
         agent.speed = stats.movementSpeed;
         
+    }
+    public void StartStateMachine(){
+        if(agent == null) agent = transform.GetComponent<NavMeshAgent>();
+        currentState = firstState;
+        agent.enabled = aiActive; 
+        agent.isStopped = !aiActive;
+
+    }
+    public void EndStateMachine(){
+        agent.isStopped = true;
+        agent.enabled = false;
     }
 
     public void TransitionToState(State nextState)
