@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02c5d553beddb64a9a1e57536c4bf03, type: 3}
+  m_Script: {fileID: 11500000, guid: 24a8220cdc015bb468aae4a354b472f7, type: 3}
   m_Name: ChaseState
   m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 44915ae4f6428a748801f4f144b054fd, type: 2}
   transitions:
-  - {fileID: 11400000, guid: c01b8598b697b43428f84fa04bea139e, type: 2}
-  newTransitions:
-  - name: toAttack
-    targetState: {fileID: 11400000, guid: a0c0490f4cda582488868da3709957cc, type: 2}
-    condition: {fileID: 11400000, guid: 87763333f56a176459de0c65b46d969e, type: 2}
-  movementSpeed: 3.5
-  stoppingDistance: 2
-  _agent: {fileID: 0}
+  - decision: {fileID: 11400000, guid: 95bc983954d01164db4a360781d05ca1, type: 2}
+    trueState: {fileID: 11400000, guid: a0c0490f4cda582488868da3709957cc, type: 2}
+    falseState: {fileID: 11400000, guid: 9c3db51cf095cba4c86a1c73c882b1de, type: 2}
+  - decision: {fileID: 11400000, guid: ced751a3eb2cd7e4cac4141c30d1c0bf, type: 2}
+    trueState: {fileID: 11400000, guid: 9c3db51cf095cba4c86a1c73c882b1de, type: 2}
+    falseState: {fileID: 11400000, guid: a3401c2ff37e2df4e9e9301dd992fc89, type: 2}

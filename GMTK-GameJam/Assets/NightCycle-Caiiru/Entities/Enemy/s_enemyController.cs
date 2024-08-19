@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class s_enemyController : MonoBehaviour
 { 
 
-    [SerializeField] private float _movementSpeed = 1f;
+  
     [SerializeField] private Transform targetTransform;
 
     #region Components

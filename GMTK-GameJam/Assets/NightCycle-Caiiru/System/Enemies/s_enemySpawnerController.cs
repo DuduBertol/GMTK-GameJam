@@ -11,9 +11,13 @@ public class s_enemySpawnerController : MonoBehaviour
     [SerializeField] private bool spawningEnemies = false;
     
     [SerializeField] private GameObject[] _enemiesPool;
-    
+
+
+    [Header("Editor only")] public bool poolActive;
     void Start()
     {
+        if (!poolActive)
+            return;
         _enemiesPool = new GameObject[50];
         for (int i = 0; i < 50; i++)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,76 +6,66 @@ using UnityEngine.AI;
 
 public class StateMachine : MonoBehaviour
 {
-    public State currentState; 
-    public Transform target;
+    [Header("Entity Stats")] public s_EnemyStats stats;
+    
+    [Space(10)]
+    [Header("State Machine Settings")]
+    public State currentState;
 
-    [SerializeField] private NavMeshAgent agent;
+    public State remainInState;
+    public Transform target;
+    public s_EnemyAttackManager attackManager;
+    [Space(5)]
+    public bool aiActive;
+
+    public bool drawSphere;
+    [HideInInspector] public NavMeshAgent agent;
+    [HideInInspector] public float stateTimeElapsed;
+
+    private void Awake()
+    {
+        //target = GameObject.Find("Player").transform; // TIRAR ISSO DEPOIS
+        agent = transform.GetComponent<NavMeshAgent>();
+        attackManager = transform.GetComponent<s_EnemyAttackManager>();
+    }
+
     void Start()
     {
-        Debug.Log($"{transform.name} started his statemachine");
-        agent = GetComponent<NavMeshAgent>();
-        target = GameObject.Find("Player").transform;
-        if (currentState != null)
-        {
-            currentState.OnEnter(this);
-        }
+        agent.enabled = aiActive;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentState == null)
+        if (!aiActive)
             return;
+        currentState.UpdateState(this);
+        agent.stoppingDistance = stats.stoppingDistance;
+        agent.speed = stats.movementSpeed;
         
-        currentState.OnUpdate(this);
-        /*
-        foreach (var transition in transitions)
+    }
+
+    public void TransitionToState(State nextState)
+    {
+        if (nextState != remainInState)
         {
-            if (transition.ShouldTransition(this))
-            {
-                SwitchState(transition.targetState);
-                break;
-            }
+            currentState = nextState;
+            OnExitState();
         }
-        */
     }
 
-    public void SwitchState(State newState)
+    public bool CheckIfCountDownElapsed(float duration)
     {
-        Debug.Log($"Changing from  {currentState} to {newState}");
-        if(currentState!=null)
-            currentState.OnExit(this);
-
-        currentState = newState;
-        
-        if(currentState!= null)
-            currentState.OnEnter(this);
-
- 
+        stateTimeElapsed += Time.deltaTime;
+        return (stateTimeElapsed >= duration);
+    }
+    private void OnExitState()
+    {
+        stateTimeElapsed = 0;
     }
 
-    public NavMeshAgent GetAgent()
+    private void OnDrawGizmosSelected()
     {
-        return agent;
+         
     }
-
-    public void SetAgentStoped(bool value)
-    {
-        agent.isStopped = value;
-    } public void SetAgentStoped(bool value, float _speed)
-    {
-        agent.isStopped = value;
-        agent.speed = _speed;
-    }
-
-    public void SetStoppingDistance(float _distance)
-    {
-        agent.stoppingDistance = _distance;
-    }
-
-    public void SetDestination(Transform _target)
-    {
-        agent.SetDestination(_target.position);
-    }
-    
 }

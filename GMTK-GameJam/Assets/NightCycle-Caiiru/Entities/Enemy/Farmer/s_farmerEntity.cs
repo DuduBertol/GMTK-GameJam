@@ -23,10 +23,7 @@ public class s_farmerEntity : Entity
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
-        var _popupDamage = s_popupManager.Instance.GetPopoup();
-        _popupDamage.transform.position = this.transform.position;
-        _popupDamage.gameObject.SetActive(true);
-        _popupDamage.GetComponent<s_popupController>().Create(_damage.ToString());
+       
         _hitParticle.Play();
         
     }

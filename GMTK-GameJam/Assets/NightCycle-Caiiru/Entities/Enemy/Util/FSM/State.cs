@@ -1,37 +1,36 @@
 using System.Collections;
-using System.Collections.Generic;using System.IO;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
-public class State : ScriptableObject
-{ 
-    public Transition[] transitions;
-    public nTransition[] newTransitions;
-    public virtual void OnEnter(StateMachine statemachine){ }
 
-    public virtual void OnUpdate(StateMachine statemachine)
+[CreateAssetMenu(menuName = "FSM/State")]
+public class State : ScriptableObject
+{
+    public IAction[] actions;
+    public Transition[] transitions;
+    public void UpdateState(StateMachine stateMachine)
     {
-        foreach (var _transition in newTransitions)
+        DoActions(stateMachine);
+        CheckTransitions(stateMachine);
+    }
+
+    private void DoActions(StateMachine stateMachine)
+    {
+        foreach (var _action in actions)
         {
-            if (_transition.ShouldTransition(statemachine))
-            {
-                statemachine.SwitchState(_transition.targetState);
-                break;
-            }
+            _action.Act(stateMachine);
         }
     }
-    
-    public virtual void OnExit(StateMachine statemachine){ }
-}
-[System.Serializable]
-public struct nTransition
-{
-    public string name;
-    public State targetState;
-    public Condition condition;
 
-    public bool ShouldTransition(StateMachine stateMachine)
+    private void CheckTransitions(StateMachine stateMachine)
     {
-        return condition.CheckCondition(stateMachine);
+        for (int i = 0; i < transitions.Length; i++)
+        {
+            bool decisionSucceded = transitions[i].decision.Decide(stateMachine);
+            if (decisionSucceded)
+                stateMachine.TransitionToState(transitions[i].trueState);
+            else
+                stateMachine.TransitionToState(transitions[i].falseState);
+            
+        }
     }
-    
 }
