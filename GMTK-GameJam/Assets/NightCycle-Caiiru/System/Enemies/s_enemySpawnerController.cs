@@ -11,9 +11,13 @@ public class s_enemySpawnerController : MonoBehaviour
     [SerializeField] private bool spawningEnemies = false;
     
     [SerializeField] private GameObject[] _enemiesPool;
-    
+
+
+    [Header("Editor only")] public bool poolActive;
     void Start()
     {
+        if (!poolActive)
+            return;
         _enemiesPool = new GameObject[50];
         for (int i = 0; i < 50; i++)
         {
@@ -39,9 +43,9 @@ public class s_enemySpawnerController : MonoBehaviour
         for(int i = 0; i<_value; i++)
         {
             var _enemy = GetEnemy();
-            _enemy.gameObject.SetActive(true);
             _enemy.transform.position = _position;
-            _enemy.GetComponent<s_enemyController>().SetDestination(targetTransform);
+            _enemy.gameObject.SetActive(true);
+            //_enemy.GetComponent<s_enemyController>().SetDestination(targetTransform);
         }
     }
 

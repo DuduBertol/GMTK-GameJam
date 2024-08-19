@@ -15,6 +15,12 @@ public abstract class Entity : MonoBehaviour
     public virtual void TakeDamage(int _damage)
     {
         this.currentHP = currentHP - _damage <= 0 ? 0 : currentHP - _damage;
+        
+        var _popupDamage = s_popupManager.Instance.GetPopoup();
+        _popupDamage.transform.position = this.transform.position;
+        _popupDamage.gameObject.SetActive(true);
+        _popupDamage.GetComponent<s_popupController>().Create(_damage.ToString());
+        
         if (currentHP == 0) Die();
     }
 
