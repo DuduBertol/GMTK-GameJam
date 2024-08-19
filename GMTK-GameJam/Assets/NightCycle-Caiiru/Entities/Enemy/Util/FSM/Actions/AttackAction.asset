@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51222a1c7116ac4f9d711cc77a2d9fd, type: 3}
   m_Name: AttackAction
   m_EditorClassIdentifier: 
+  attackTag: Defense

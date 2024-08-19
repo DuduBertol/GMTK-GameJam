@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   gameObjects:
-  - {fileID: 0}
   - {fileID: 0}
   nearTarget: {fileID: 0}
