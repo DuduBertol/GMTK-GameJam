@@ -50,6 +50,8 @@ public class s_BeanTreeController : MonoBehaviour
     {
         treeLevel++;
         beanBasesList[treeLevel].SetActive(true);
+
+        SoundManager.Instance.PlayBeanTreeGrowSound(Camera.main.transform.position, 1f);
     }
 
     public void ToggleLeanText(bool value)

@@ -19,6 +19,7 @@ public class s_GettableObject : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<s_PlayerCollision>().SetPlayerObjectChild(transform);
+            SoundManager.Instance.PlayDropGetItemSound(Camera.main.transform.position, 1f);
 
             if(objectType == ObjectType.Chicken)
             {

@@ -10,6 +10,7 @@ public class GameInput : MonoBehaviour
 
     public event EventHandler OnDropAction;
     public event EventHandler OnInteractAction;
+    public event EventHandler OnPauseAction;
 
     private PlayerInputActions playerInputActions;
 
@@ -22,6 +23,7 @@ public class GameInput : MonoBehaviour
         playerInputActions.Player.Enable();
 
         playerInputActions.Player.Drop.performed += Drop_performed;
+        playerInputActions.Player.Pause.performed += Pause_performed;
         playerInputActions.Player.Interact.performed += Interact_performed;
     }
 
@@ -41,6 +43,10 @@ public class GameInput : MonoBehaviour
     private void Drop_performed(InputAction.CallbackContext obj)
     {
         OnDropAction?.Invoke(this, EventArgs.Empty);
+    }
+    private void Pause_performed(InputAction.CallbackContext obj)
+    {
+        OnPauseAction?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalizedPlayer()

@@ -22,6 +22,8 @@ public class s_GoldenChicken : MonoBehaviour
             Transform eggTransform = Instantiate(goldenEggPrefab, eggSpawner);
             eggTransform.localPosition = Vector3.zero;
             eggTransform.parent = null;
+
+            SoundManager.Instance.PlaySpawnEggSound(Camera.main.transform.position, 1f);
         }
 
         // goldenEggLastScale += new Vector3(scaleAmountToIncrease, scaleAmountToIncrease, scaleAmountToIncrease);
