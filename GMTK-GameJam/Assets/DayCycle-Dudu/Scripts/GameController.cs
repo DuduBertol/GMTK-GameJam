@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private float nightTime;
     [SerializeField] private bool isDay;
 
+    [SerializeField] private int dayCount;
+
     [Header("Eggs")]
     public int eggAmount;
     
@@ -71,7 +73,7 @@ public class GameController : MonoBehaviour
             {
                 isDay = false;
                 runningTime = 0f;
-                OnDayNightChanged?.Invoke(this, EventArgs.Empty);
+                OnDayNightChanged?.Invoke(this, EventArgs.Empty); // Night Become
             }
         }
         else
@@ -86,7 +88,8 @@ public class GameController : MonoBehaviour
             {
                 isDay = true;
                 runningTime = 0f;
-                OnDayNightChanged?.Invoke(this, EventArgs.Empty);
+                OnDayNightChanged?.Invoke(this, EventArgs.Empty); // Day Become
+                dayCount++;
             }
         }
 
@@ -124,6 +127,9 @@ public class GameController : MonoBehaviour
     }
     public GameObject GetPlayer(){
         return player;
+    }
+    public int GetDayNumber(){
+        return dayCount;
     }
 }
 

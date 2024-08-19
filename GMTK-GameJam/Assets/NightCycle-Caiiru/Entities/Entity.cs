@@ -26,7 +26,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log(gameObject.name + " died");
+        this.gameObject.SetActive(false);
     }
     
 }

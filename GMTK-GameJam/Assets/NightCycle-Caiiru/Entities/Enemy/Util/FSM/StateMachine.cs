@@ -47,11 +47,18 @@ public class StateMachine : MonoBehaviour
         agent.speed = stats.movementSpeed;
         
     }
-    public void StartStateMachine(){
+    public void StartStateMachine(s_EnemyStats stats){
+        this.stats = stats;
+        if(!this.transform.GetComponent<EnemyEntity>()){
+            return;
+        }
+        this.transform.GetComponent<EnemyEntity>().Create();
         if(agent == null) agent = transform.GetComponent<NavMeshAgent>();
-        currentState = firstState;
+        //currentState = firstState;
+        TransitionToState(firstState);
         agent.enabled = aiActive; 
         agent.isStopped = !aiActive;
+        agent.radius = 0.5f;
 
     }
     public void EndStateMachine(){
@@ -63,8 +70,10 @@ public class StateMachine : MonoBehaviour
     {
         if (nextState != remainInState)
         {
+
+            OnExitState(currentState);
             currentState = nextState;
-            OnExitState();
+            OnEnterState(currentState);
         }
     }
 
@@ -73,7 +82,10 @@ public class StateMachine : MonoBehaviour
         stateTimeElapsed += Time.deltaTime;
         return (stateTimeElapsed >= duration);
     }
-    private void OnExitState()
+    private void OnEnterState(State state){
+        state.EnterState(this);
+    }
+    private void OnExitState(State state)
     {
         stateTimeElapsed = 0;
     }

@@ -18,18 +18,11 @@ public class LookDecision : Decision
         Debug.DrawRay(stateMachine.transform.position, stateMachine.agent.transform.forward * stateMachine.stats.attackRange, Color.green);
 
         if (Physics.Raycast(stateMachine.agent.transform.position, stateMachine.agent.transform.forward,
-                out hit, stateMachine.stats.attackRange) && hit.collider.CompareTag("Player"))
-        {
+                out hit, stateMachine.stats.attackRange) && hit.collider.CompareTag("Defense"))
+        { 
             stateMachine.target = hit.transform;
             return true;
-        }
-        /*
-        if (Physics.SphereCast(stateMachine.agent.transform.position + stateMachine.agent.transform.forward/2, stateMachine.stats.lookSphereCastRadius, stateMachine.agent.transform.forward, out hit,
-                stateMachine.stats.lookSphereCastRadius) && hit.collider.CompareTag("Player"))
-        {
-            stateMachine.target = hit.transform;
-            return true;
-        }*/
+        } 
 
         return false;
     }
