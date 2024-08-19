@@ -39,6 +39,8 @@ public class s_PlayerCollision : MonoBehaviour
     private void GameInput_OnDropAction(object sender, EventArgs e)
     {
         ClearPlayerObjectChild();
+        
+        GameController.Instance.hasGoldenChicken = false;
     }
 
 
@@ -76,6 +78,14 @@ public class s_PlayerCollision : MonoBehaviour
         {
             overlappingBeanTree = true;
             collider.transform.parent.parent.GetComponent<s_BeanTreeController>().ToggleLeanText(true);
+        }
+
+        if(collider.gameObject.CompareTag("WinGame"))
+        {
+            if(GameController.Instance.hasGoldenChicken)
+            {
+                Debug.Log("You Win!");
+            }
         }
     }
 

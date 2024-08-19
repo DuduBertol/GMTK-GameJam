@@ -19,8 +19,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private int dayCount;
 
-    [Header("Eggs")]
+    [Header("Golden Chicken")]
     public int eggAmount;
+    public bool hasGoldenChicken;
+    [SerializeField] private GameObject goldenChicken;
     
     [Header("Bean Tree")]
     [SerializeField] private Transform beanTree;
@@ -110,7 +112,17 @@ public class GameController : MonoBehaviour
 
     public void IncreaseBeanTree()
     {
-        beanTree.gameObject.GetComponent<s_BeanTreeController>().UpdateBeanTreeVisual();
+        if(beanTree.gameObject.GetComponent<s_BeanTreeController>().treeLevel < beanTree.gameObject.GetComponent<s_BeanTreeController>().baseAmounts)
+        {
+            beanTree.gameObject.GetComponent<s_BeanTreeController>().UpdateBeanTreeVisual();
+        }
+        else
+        {
+            hasGoldenChicken = true;
+
+            goldenChicken.GetComponent<BoxCollider>().enabled = true;
+            goldenChicken.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 
     public float GetTimeReason()

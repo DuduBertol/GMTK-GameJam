@@ -5,6 +5,7 @@ using UnityEngine;
 public class s_BeanTreeController : MonoBehaviour
 {
     public int treeLevel;
+    public int baseAmounts;
 
     [SerializeField] private Transform colliderTransform;
     [SerializeField] private Transform interactionText;
@@ -13,7 +14,6 @@ public class s_BeanTreeController : MonoBehaviour
     [SerializeField] private Transform beanBaseSpawnTransform;
     [SerializeField] private float heightOffsetBean;
     [SerializeField] private float rotationOffsetBean;
-    [SerializeField] private int baseAmounts;
 
 
     private void Start() 
@@ -32,7 +32,6 @@ public class s_BeanTreeController : MonoBehaviour
         else
         {
             Transform lastBeanTransform = beanBasesList[beanBasesList.Count - 1].transform;
-            Debug.Log(lastBeanTransform.rotation.y);
 
             GameObject beanBase = Instantiate(beanBasePrefab, gameObject.transform.GetChild(0));
 
