@@ -24,7 +24,7 @@ public class StateMachine : MonoBehaviour
 
     private void Awake()
     {
-        //target = GameObject.Find("Player").transform; // TIRAR ISSO DEPOIS
+        target = GameController.Instance.GetPlayer().transform;// TIRAR ISSO DEPOIS
         agent = transform.GetComponent<NavMeshAgent>();
         attackManager = transform.GetComponent<s_EnemyAttackManager>();
     }

@@ -27,13 +27,13 @@ public class s_enemySpawnerController : MonoBehaviour
             _instance.gameObject.SetActive(false);
         }
         
-        SpawnEnemies(_enemiesCount, _spawnPosition.position, s_gameManager.Instance.GetPlayerObject().transform);
+        SpawnEnemies(_enemiesCount, _spawnPosition.position, GameController.Instance.GetPlayer().transform);
     }
 
     public void SpawnEnemies(int _value, Vector3 _position, [CanBeNull] Transform targetTransform )
     {
         if (targetTransform == null)
-            targetTransform = s_gameManager.Instance.GetPlayerObject().transform;
+            targetTransform = GameController.Instance.GetPlayer().transform;
         if (_value <= 0)
         {
             Debug.LogWarning("value incorrect");

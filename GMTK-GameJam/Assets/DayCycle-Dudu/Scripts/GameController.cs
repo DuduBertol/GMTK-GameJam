@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -24,6 +25,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private float scaleMultiplier;
     [SerializeField] private float beanXZScaleMax;
 
+    [Header("Player")]
+    public GameObject player;
+
+
     [Header("Lightning")]
     [SerializeField] private Transform direcLightDay;
     [SerializeField] private Transform direcLightNight;
@@ -32,7 +37,17 @@ public class GameController : MonoBehaviour
 
     private void Awake() 
     {
+        if(Instance != this && Instance != null){
+            Destroy(this.gameObject);
+        }
+
         Instance = this;    
+         if(player == null){
+            player = GameObject.Find("PlayerPrefab");
+        }
+    }
+    public void Start(){
+       
     }
 
     private void Update() 
@@ -106,6 +121,9 @@ public class GameController : MonoBehaviour
     public float GetTimeReason()
     {
         return runningTime / dayTime;
+    }
+    public GameObject GetPlayer(){
+        return player;
     }
 }
 
