@@ -3885,8 +3885,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   runningTime: 0
-  dayTime: 10
-  nightTime: 10
+  dayTime: 40
+  nightTime: 40
   isDay: 1
   SpawnerController: {fileID: 0}
   dayCount: 0
