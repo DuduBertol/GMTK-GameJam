@@ -2869,8 +2869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   runningTime: 0
-  dayTime: 100
-  nightTime: 100
+  dayTime: 90
+  nightTime: 90
   isDay: 1
   dayCount: 0
   canvasController: {fileID: 1729077055}
