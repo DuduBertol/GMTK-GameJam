@@ -83,6 +83,13 @@ public class s_enemySpawnerController : MonoBehaviour
         GameController.Instance.OnDayNightChanged -= OnTimeChanged;
 
     }
+    public void CheckAllEnemies(){
+        foreach(var _instance in _enemiesPool){
+            if(_instance.activeInHierarchy)
+                return;
+        }
+        GameController.Instance.ToggleDay();
+    }
 
     void OnTimeChanged(object sender, EventArgs args){
         Debug.Log($"Now its Day? {GameController.Instance.GetIsDay()}");

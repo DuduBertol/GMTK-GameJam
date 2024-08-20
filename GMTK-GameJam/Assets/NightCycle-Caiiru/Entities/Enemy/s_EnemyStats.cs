@@ -27,4 +27,5 @@ public class s_EnemyStats : ScriptableObject
     [Header("Enemy Mesh Info")]
     public Mesh mesh;
     public List<Material> materials;
+    public GameObject meshHolder;
 }

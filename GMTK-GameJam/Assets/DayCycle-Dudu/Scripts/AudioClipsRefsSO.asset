@@ -19,7 +19,7 @@ MonoBehaviour:
   coin: {fileID: 8300000, guid: 7ad37f77dff34f74d8be0a04e26b31dc, type: 3}
   nightBecome: {fileID: 8300000, guid: 1baadc6ab860c9b47bd3bf7abdfe9660, type: 3}
   joaozinhoDeath: {fileID: 8300000, guid: aedc57a14a8fd1b4c8533ec1d7d8552b, type: 3}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 57ca37c24e10e8b4a946aeb70dff6d06, type: 3}
   beanTreeDamage: {fileID: 8300000, guid: 01d2353ae8d0b594ba36c20c92c68b97, type: 3}
   beanTreeBreak: {fileID: 8300000, guid: 7a0a16d365eff154fbebb86662d91bf5, type: 3}
   beanTreeFootstep:

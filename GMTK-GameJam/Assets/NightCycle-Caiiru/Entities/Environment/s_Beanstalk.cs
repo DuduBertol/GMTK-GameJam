@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class s_Beanstalk : Entity
 {
+    public int _level;
     public override void Create()
     {
         base.Create();
@@ -11,20 +13,16 @@ public class s_Beanstalk : Entity
     public override void Die()
     {
         base.Die();
+        SceneManager.LoadScene("EndScene");
     }
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
         
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void IncreaseTreeLevel(){
+        _level++;
+        this.maxHP = 10 * _level;
+        this.currentHP = maxHP;
     }
 }

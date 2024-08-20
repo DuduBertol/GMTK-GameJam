@@ -12,6 +12,10 @@ public class EnemyEntity : Entity
         stats = this.GetComponent<StateMachine>().stats;
         this.maxHP = stats.maxHP;
         this.currentHP = stats.currentHP;
+        var _child = transform.GetChild(0);
+        _child.transform.localScale = new Vector3(60,60,60);
+        //_child.transform.localRotation = new Quaternion(-90,-90,0,0);
+
         GetComponentInChildren<MeshFilter>().mesh = stats.mesh;
         //GetComponentInChildren<MeshRenderer>().materials[0] = stats.material;
         GetComponentInChildren<MeshRenderer>().SetMaterials(stats.materials);
@@ -31,5 +35,6 @@ public class EnemyEntity : Entity
         transform.GetComponent<StateMachine>().EndStateMachine();
         base.Die();
         SoundManager.Instance.PlayJoaozinhoDeathSound(Camera.main.transform.position, 0.75f);
+        GameController.Instance.SpawnerController.CheckAllEnemies();
     }
 }

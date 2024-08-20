@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private float nightTime;
     [SerializeField] private bool isDay;
 
+    public s_enemySpawnerController SpawnerController;
+
     [SerializeField] private int dayCount;
 
     [Header("Canvas")]
@@ -54,6 +56,7 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
+        SpawnerController = GetComponentInChildren<s_enemySpawnerController>();
         DisplayCanvasText("Sell golden eggs and fertilize your Bean tree!");
 
     }
@@ -100,6 +103,11 @@ public class GameController : MonoBehaviour
             }
         }
 
+    }
+    public void ToggleDay(){
+        if(!isDay){
+            runningTime = nightTime;
+        }
     }
 
     public bool GetIsDay()
