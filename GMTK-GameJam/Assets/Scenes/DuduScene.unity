@@ -19500,6 +19500,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6860130611467325268, guid: f5060ea74d94bfd4195c5eaf733ca6bc,
+        type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 1025
+      objectReference: {fileID: 0}
     - target: {fileID: 6996358992387574435, guid: f5060ea74d94bfd4195c5eaf733ca6bc,
         type: 3}
       propertyPath: m_IsActive
