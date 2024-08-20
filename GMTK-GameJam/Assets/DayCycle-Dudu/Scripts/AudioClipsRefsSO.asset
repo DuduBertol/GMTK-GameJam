@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29cdf5b812348a241aa311fc5307da86, type: 3}
+  m_Name: AudioClipsRefsSO
+  m_EditorClassIdentifier: 
+  dropGetItem: {fileID: 8300000, guid: 7dc0d84bebaa2c047885b5d3cff665aa, type: 3}
+  spawnEgg: {fileID: 8300000, guid: 8d0399e727eb6de428cfa7fc89d3820c, type: 3}
+  sellEgg: {fileID: 8300000, guid: cbe9d4a96c996df4888d7f70bc09dd29, type: 3}
+  beanTreeGrow: {fileID: 8300000, guid: b664f8b99a153834695c59cb41c474f1, type: 3}
+  coin: {fileID: 8300000, guid: 7ad37f77dff34f74d8be0a04e26b31dc, type: 3}
+  beanTreeDamage: {fileID: 8300000, guid: 01d2353ae8d0b594ba36c20c92c68b97, type: 3}
+  beanTreeBreak: {fileID: 8300000, guid: 7a0a16d365eff154fbebb86662d91bf5, type: 3}
+  beanTreeFootstep:
+  - {fileID: 8300000, guid: 9a1bac178d3d98c4787a8004eafc51ec, type: 3}
+  - {fileID: 8300000, guid: a17a82350415007478ed0edd4542ba31, type: 3}
+  - {fileID: 8300000, guid: 424bf56278d2a514eb159279c7857090, type: 3}
+  villagerFootstep:
+  - {fileID: 8300000, guid: d85d5234c062229458944635404161ad, type: 3}
+  - {fileID: 8300000, guid: 4e09dcb91453f2e4b846095858ceb1a2, type: 3}
+  - {fileID: 8300000, guid: 295fa61a641f2f448a225e73b989fd67, type: 3}
+  giantFootstep:
+  - {fileID: 8300000, guid: ba03804eb746a3c4ea9572a0c8847e3e, type: 3}
+  - {fileID: 8300000, guid: e4e6eabadfa613e46a4ad43d3a3512ad, type: 3}
+  - {fileID: 8300000, guid: 1503d98485bd4b841a7cf3313808312c, type: 3}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class s_PlayerCollision : MonoBehaviour
 {
@@ -38,7 +39,12 @@ public class s_PlayerCollision : MonoBehaviour
 
     private void GameInput_OnDropAction(object sender, EventArgs e)
     {
-        ClearPlayerObjectChild();
+        if(objChild != null)
+        {
+            ClearPlayerObjectChild();
+            GameController.Instance.hasGoldenChicken = false;
+            SoundManager.Instance.PlayDropGetItemSound(Camera.main.transform.position, 1f);
+        }
     }
 
 
@@ -69,6 +75,8 @@ public class s_PlayerCollision : MonoBehaviour
                 
                 GameController.Instance.eggAmount++;
                 tentTransform.gameObject.GetComponent<s_TentController>().UpdateTextVisual();
+
+                SoundManager.Instance.PlaySellEggSound(Camera.main.transform.position, 1f);
             }
         }
 
@@ -76,6 +84,15 @@ public class s_PlayerCollision : MonoBehaviour
         {
             overlappingBeanTree = true;
             collider.transform.parent.parent.GetComponent<s_BeanTreeController>().ToggleLeanText(true);
+        }
+
+        if(collider.gameObject.CompareTag("WinGame"))
+        {
+            if(GameController.Instance.hasGoldenChicken)
+            {
+                Debug.Log("You Win!");
+                SceneManager.LoadScene("EndScene");
+            }
         }
     }
 

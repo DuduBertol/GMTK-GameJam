@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
@@ -12,6 +10,7 @@ public class GameController : MonoBehaviour
     public event EventHandler OnDayNightChanged;
 
     [Header("General")]
+    public bool isPaused;
     [SerializeField] private float runningTime;
     [SerializeField] private float dayTime;
     [SerializeField] private float nightTime;
@@ -19,8 +18,13 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private int dayCount;
 
-    [Header("Eggs")]
+    [Header("Canvas")]
+    [SerializeField] private s_CanvasController canvasController;
+
+    [Header("Golden Chicken")]
     public int eggAmount;
+    public bool hasGoldenChicken;
+    [SerializeField] private GameObject goldenChicken;
     
     [Header("Bean Tree")]
     [SerializeField] private Transform beanTree;
@@ -48,8 +52,10 @@ public class GameController : MonoBehaviour
             player = GameObject.Find("PlayerPrefab");
         }
     }
-    public void Start(){
-       
+    private void Start()
+    {
+        DisplayCanvasText("Sell golden eggs and fertilize your Bean tree!");
+
     }
 
     private void Update() 
@@ -110,7 +116,21 @@ public class GameController : MonoBehaviour
 
     public void IncreaseBeanTree()
     {
-        beanTree.gameObject.GetComponent<s_BeanTreeController>().UpdateBeanTreeVisual();
+            
+        if(beanTree.gameObject.GetComponent<s_BeanTreeController>().treeLevel < beanTree.gameObject.GetComponent<s_BeanTreeController>().baseAmounts)
+        {
+            beanTree.gameObject.GetComponent<s_BeanTreeController>().UpdateBeanTreeVisual();
+        }
+        
+        if(beanTree.gameObject.GetComponent<s_BeanTreeController>().treeLevel >= beanTree.gameObject.GetComponent<s_BeanTreeController>().baseAmounts)
+        {
+            DisplayCanvasText("Your tree achievs the sky! \n Go home with your golden chicken!");
+
+            hasGoldenChicken = true;
+
+            goldenChicken.GetComponent<BoxCollider>().enabled = true;
+            goldenChicken.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 
     public float GetTimeReason()
@@ -122,6 +142,11 @@ public class GameController : MonoBehaviour
     }
     public int GetDayNumber(){
         return dayCount;
+    }
+
+    public void DisplayCanvasText(string text)
+    {
+        canvasController.DisplayText(text);
     }
 }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class s_GettableObject : MonoBehaviour
 {
- 
     public enum ObjectType
     {
         GoldenEgg,
@@ -20,6 +19,12 @@ public class s_GettableObject : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<s_PlayerCollision>().SetPlayerObjectChild(transform);
+            SoundManager.Instance.PlayDropGetItemSound(Camera.main.transform.position, 1f);
+
+            if(objectType == ObjectType.Chicken)
+            {
+                GameController.Instance.hasGoldenChicken = true;
+            }
         }
     }
 }

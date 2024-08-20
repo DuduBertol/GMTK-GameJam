@@ -17,15 +17,10 @@ public class s_TentController : MonoBehaviour
     [SerializeField] private int fertilizerPrice;
     [SerializeField] private Transform fertilizerPrefab;
     
-    /* [Header("Others")]
-    [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private Material dayMaterial;
-    [SerializeField] private Material nightMaterial; */
     private Transform playerTransform;
 
     private void Start() 
     {
-        // GameController.Instance.OnDayNightChanged += GameController_OnDayNightChanged;
         GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
     }
 
@@ -40,6 +35,8 @@ public class s_TentController : MonoBehaviour
                 
                 Transform fertilizer = Instantiate(fertilizerPrefab, spawnTradePlacer);
                 UpdateTextVisual();
+
+                SoundManager.Instance.PlayCoinSound(Camera.main.transform.position, 1f);
             };
         }
     }
