@@ -4,8 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "FSM/EnemyStats", fileName = "New Enemy Stats")]
 public class s_EnemyStats : ScriptableObject
-{
-    public string name;
+{ 
+    public string name; 
     [Header("Life Settings")]
     public int currentHP;
     public int maxHP;
@@ -21,6 +21,7 @@ public class s_EnemyStats : ScriptableObject
     public float attackRange;
     public float attackRate;
     public float attackDamage;
+ 
     
     [Space(5)]
     [Header("Enemy Mesh Info")]

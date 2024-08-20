@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6939153758807291106}
   - component: {fileID: 6082080453290474722}
   - component: {fileID: 2298242465813509472}
+  - component: {fileID: 2437054986790276263}
   m_Layer: 8
   m_Name: rockPrefab
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   _lifeDuration: 1
   _negativeMoveY: 15
   _animationDuration: 0.3
+  _rigidbody: {fileID: 0}
 --- !u!54 &6082080453290474722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3181682960831139370}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 26
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -142,9 +144,30 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1792
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.015194222
+  m_Center: {x: 0.00044814823, y: -0.0023453403, z: 0.00060340844}
+--- !u!135 &2437054986790276263
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181682960831139370}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

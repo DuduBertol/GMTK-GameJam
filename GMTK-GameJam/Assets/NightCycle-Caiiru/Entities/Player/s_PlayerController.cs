@@ -25,7 +25,7 @@ public class s_PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         _readInput = context.ReadValue<Vector2>();
-        _movementInput = new Vector3(_readInput.x, _rigidbody.velocity.y, _readInput.y);
+        _movementInput = new Vector3(_readInput.x, 0, _readInput.y);
     }
     void Update()
     {

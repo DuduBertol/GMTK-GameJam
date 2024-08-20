@@ -15,6 +15,7 @@ public class s_Beanstalk : Entity
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
+        
     }
     void Start()
     {

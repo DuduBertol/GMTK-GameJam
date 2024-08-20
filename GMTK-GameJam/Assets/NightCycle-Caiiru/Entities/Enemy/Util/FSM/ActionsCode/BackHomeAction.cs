@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BackHomeAction : MonoBehaviour
+[CreateAssetMenu(menuName ="FSM/Actions/BackHomeAction")]
+public class BackHomeAction : IAction
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public override void Act(StateMachine stateMachine)
+    { 
+        stateMachine.agent.isStopped = false;
+        stateMachine.agent.destination = stateMachine.initialPosition;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public override void Enter(StateMachine stateMachine)
+    { 
     }
+
+     
 }

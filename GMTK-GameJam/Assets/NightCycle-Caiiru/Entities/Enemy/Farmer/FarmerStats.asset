@@ -23,4 +23,5 @@ MonoBehaviour:
   attackRate: 0.5
   attackDamage: 1
   mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: d8aa536c4e7c24b469decaa5909ba9a1, type: 2}
+  materials:
+  - {fileID: 2100000, guid: d8aa536c4e7c24b469decaa5909ba9a1, type: 2}

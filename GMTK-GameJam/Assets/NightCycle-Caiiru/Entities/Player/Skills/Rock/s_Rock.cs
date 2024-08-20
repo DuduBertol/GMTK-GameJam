@@ -69,13 +69,21 @@ public class s_Rock : MonoBehaviour
         this._wasThrow = false;
         this.gameObject.SetActive(false);
     }
-
+    /*
     private void OnCollisionEnter(Collision other)
     {
         if (!_hitSomething) _hitSomething=true;
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.transform.GetComponent<Entity>().TakeDamage(_rockDamage);
+        }
+    }   
+    */
+    private void OnTriggerEnter(Collider collider){
+         if (!_hitSomething) _hitSomething=true;
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            collider.transform.GetComponent<Entity>().TakeDamage(_rockDamage);
         }
     }
 }
