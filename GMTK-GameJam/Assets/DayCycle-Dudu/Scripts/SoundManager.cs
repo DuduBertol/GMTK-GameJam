@@ -38,11 +38,13 @@ public class SoundManager : MonoBehaviour
     //
 
     public void PlayGiantWalkSound(Vector3 position, float volumeMultiplier)
-    {
+    { 
+        
         if(giantAudioSource.mute)
         {
             giantAudioSource.mute = false;
-            // giantAudioSource.clip = audioClipsRefsSO.giantFootstep[Random.Range(0, audioClipsRefsSO.giantFootstep.Length)];
+            giantAudioSource.clip = audioClipsRefsSO.giantFootstep[Random.Range(0, audioClipsRefsSO.giantFootstep.Length)];
+            giantAudioSource.Play();
         }
     }
     public void StopGiantWalkSound()
