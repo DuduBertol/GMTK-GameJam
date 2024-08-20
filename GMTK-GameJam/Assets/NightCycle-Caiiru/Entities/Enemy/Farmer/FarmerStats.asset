@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FarmerStats
   m_EditorClassIdentifier: 
   name: Farmer
-  currentHP: 10
-  maxHP: 10
+  currentHP: 4
+  maxHP: 4
   movementSpeed: 5
   movementRate: 1
   stoppingDistance: 3

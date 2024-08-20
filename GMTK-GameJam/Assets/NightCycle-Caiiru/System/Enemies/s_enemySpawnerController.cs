@@ -30,8 +30,8 @@ public class s_enemySpawnerController : MonoBehaviour
     {
         if (!poolActive)
             return;
-        _enemiesPool = new GameObject[50];
-        for (int i = 0; i < 50; i++)
+        _enemiesPool = new GameObject[99];
+        for (int i = 0; i < 99; i++)
         {
             //var _instance = Instantiate(enemiesPrefab[UnityEngine.Random.Range(0, enemiesPrefab.Count)]);
             var _instance = Instantiate(emptyEnemyPrefab,transform);
@@ -107,7 +107,7 @@ public class s_enemySpawnerController : MonoBehaviour
                             StartCoroutine(ISpawnEnemy(_spawnPosition.position, _enemies.enemy));
                         }
                     }  
-
+                    break;
                 }
                 
             } 

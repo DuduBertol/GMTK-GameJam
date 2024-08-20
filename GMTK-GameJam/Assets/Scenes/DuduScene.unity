@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13756,7 +13756,97 @@ MonoBehaviour:
     enemies:
     - name: Farmers
       enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
-      count: 4
+      count: 1
+  - name: Second Night
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 3
+  - name: Third Night
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 6
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
+  - name: All nights Before
+    dayIndex: 1
+    enemies:
+    - name: Farmers
+      enemy: {fileID: 11400000, guid: 485a4d1cd558f9e46bee940a1774d8bc, type: 2}
+      count: 12
   _timeBetweenEachSpawn: 0.5
   _spawnCount: 0
   spawningEnemies: 0
@@ -17243,9 +17333,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8651214165193218645, guid: 3418b5108d569a54a8efe5e484d02425,
         type: 3}
+      propertyPath: _height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651214165193218645, guid: 3418b5108d569a54a8efe5e484d02425,
+        type: 3}
       propertyPath: rocksParent
       value: 
       objectReference: {fileID: 429355034}
+    - target: {fileID: 8651214165193218645, guid: 3418b5108d569a54a8efe5e484d02425,
+        type: 3}
+      propertyPath: _throwCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
