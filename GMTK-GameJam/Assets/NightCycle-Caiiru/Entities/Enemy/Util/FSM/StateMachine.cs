@@ -16,7 +16,8 @@ public class StateMachine : MonoBehaviour
     public Transform target;
     public s_EnemyAttackManager attackManager;
     
-    
+    public Vector3 initialPosition;
+
     [Space(5)]
     public bool aiActive;
 
@@ -59,6 +60,7 @@ public class StateMachine : MonoBehaviour
         agent.enabled = aiActive; 
         agent.isStopped = !aiActive;
         agent.radius = 0.5f;
+        initialPosition = this.transform.position;
 
     }
     public void EndStateMachine(){

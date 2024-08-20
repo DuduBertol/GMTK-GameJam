@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 402396430205224018}
   - component: {fileID: 8651214165193218645}
   - component: {fileID: 3386459468237397146}
+  - component: {fileID: 5642598991879785457}
   - component: {fileID: 4638306945361046042}
   m_Layer: 6
   m_Name: PlayerPrefab
@@ -123,7 +124,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326554023856004919}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -219,6 +220,26 @@ MonoBehaviour:
   objChild: {fileID: 0}
   overlappingTent: 0
   overlappingBeanTree: 0
+--- !u!114 &5642598991879785457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326554023856004919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7d2654581ece8448c132ed4cc23a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPressed: 0
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  isJumping: 0
+  jumpForce: 2
+  groundStack: 3
+  timeBetweenEachJump: 0.3
 --- !u!114 &4638306945361046042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +298,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f14a085b-e021-4f1b-8053-c8a08cfc5508
     m_ActionName: Movement/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5642598991879785457}
+        m_TargetAssemblyTypeName: s_PlayerJump, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 94554730-b673-4c66-984f-072509204fe0
+    m_ActionName: Movement/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement

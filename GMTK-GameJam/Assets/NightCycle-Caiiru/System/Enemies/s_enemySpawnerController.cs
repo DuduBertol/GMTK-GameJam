@@ -20,7 +20,6 @@ public class s_enemySpawnerController : MonoBehaviour
     private float _lastSpawnTime;
     [Header("Enemy Pool")]
     public GameObject emptyEnemyPrefab;
-    [SerializeField] private List<GameObject> enemiesPrefab;
     private GameObject[] _enemiesPool;
 
     [Header("Game Controller")]
@@ -88,7 +87,7 @@ public class s_enemySpawnerController : MonoBehaviour
     void OnTimeChanged(object sender, EventArgs args){
         Debug.Log($"Now its Day? {GameController.Instance.GetIsDay()}");
         if(GameController.Instance.GetIsDay()){
-            //TODO all active enemies return to home
+            
         }
         else{
             //Spawn Enemies based on day count

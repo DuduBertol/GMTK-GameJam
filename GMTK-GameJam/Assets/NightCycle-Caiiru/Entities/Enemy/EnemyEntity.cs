@@ -14,7 +14,7 @@ public class EnemyEntity : Entity
         this.currentHP = stats.currentHP;
         GetComponentInChildren<MeshFilter>().mesh = stats.mesh;
         //GetComponentInChildren<MeshRenderer>().materials[0] = stats.material;
-        GetComponentInChildren<MeshRenderer>().SetMaterials(new List<Material>() {stats.material});
+        GetComponentInChildren<MeshRenderer>().SetMaterials(stats.materials);
         this.transform.name = stats.name;
 
     }

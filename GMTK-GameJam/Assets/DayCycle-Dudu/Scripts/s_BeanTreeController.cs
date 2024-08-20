@@ -13,7 +13,7 @@ public class s_BeanTreeController : MonoBehaviour
     [SerializeField] private Transform beanBaseSpawnTransform;
     [SerializeField] private float heightOffsetBean;
     [SerializeField] private float rotationOffsetBean;
-    [SerializeField] private int baseAmounts;
+    public  int baseAmounts;
 
     [Header("Debug")]
     public bool UpdateLevelButton = false;

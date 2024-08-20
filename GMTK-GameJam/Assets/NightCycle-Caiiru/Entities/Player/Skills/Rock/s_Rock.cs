@@ -25,6 +25,8 @@ public class s_Rock : MonoBehaviour
     private LTDescr _tweenAnimation;
     [SerializeField]private Rigidbody _rigidbody;
 
+    private bool _wasThrow = false;
+
     #endregion
     void Awake()
     {
@@ -33,6 +35,8 @@ public class s_Rock : MonoBehaviour
 
     public void Create(Vector3 _force, int _damage)
     {
+        if(this._wasThrow == true) return;
+        this._wasThrow = true;
         _rigidbody.velocity = Vector3.zero;
         _hitSomething = false;
         this._rockDamage = _damage;
@@ -62,6 +66,7 @@ public class s_Rock : MonoBehaviour
 
         yield return new WaitForSeconds(_animationDuration);
         LeanTween.cancel(_tweenAnimation.id); 
+        this._wasThrow = false;
         this.gameObject.SetActive(false);
     }
 

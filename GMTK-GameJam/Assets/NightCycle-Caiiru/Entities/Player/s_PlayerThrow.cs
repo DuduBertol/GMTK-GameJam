@@ -1,4 +1,5 @@
- 
+
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -18,7 +19,7 @@ public class s_PlayerThrow : MonoBehaviour
     
     [Header("Pool Settings")]
     public GameObject rockPrefab;
-
+    public Transform rocksParent;
     [SerializeField] private int _rockCount;
     private GameObject[] _rocks;
 
@@ -56,12 +57,28 @@ public class s_PlayerThrow : MonoBehaviour
         {
             var _instance = Instantiate(rockPrefab);
             _instance.SetActive(false);
-            _instance.transform.SetParent(transform.GetChild(0));
+            _instance.transform.SetParent(rocksParent);
             _rocks[i] = _instance;
             
         }
+        GameController.Instance.OnDayNightChanged += OnNightCame;
+    }
+    void OnDisable(){
+        
+        GameController.Instance.OnDayNightChanged -= OnNightCame;
     }
 
+    private void OnNightCame(object sender, EventArgs args){
+        if(GameController.Instance.GetIsDay()){
+            
+            playerIsHoldingRock = false;
+            _canThrow = false;
+            return;
+        }
+        playerIsHoldingRock = true;
+        _canThrow = true;
+
+    }
    
 
     // Update is called once per frame
