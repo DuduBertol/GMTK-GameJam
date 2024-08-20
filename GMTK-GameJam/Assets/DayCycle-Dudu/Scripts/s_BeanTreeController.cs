@@ -15,7 +15,8 @@ public class s_BeanTreeController : MonoBehaviour
     [SerializeField] private float rotationOffsetBean;
     [SerializeField] private int baseAmounts;
 
-
+    [Header("Debug")]
+    public bool UpdateLevelButton = false;
     private void Start() 
     {
         beanBasesList[0].SetActive(true);
@@ -32,7 +33,7 @@ public class s_BeanTreeController : MonoBehaviour
         else
         {
             Transform lastBeanTransform = beanBasesList[beanBasesList.Count - 1].transform;
-            Debug.Log(lastBeanTransform.rotation.y);
+            //Debug.Log(lastBeanTransform.rotation.y);
 
             GameObject beanBase = Instantiate(beanBasePrefab, gameObject.transform.GetChild(0));
 
@@ -47,8 +48,18 @@ public class s_BeanTreeController : MonoBehaviour
         }
     }
 
+    public void Update(){
+        if(UpdateLevelButton){
+            UpdateLevelButton = false;
+            UpdateBeanTreeVisual();
+        }
+    }
     public void UpdateBeanTreeVisual()
     {
+        if(treeLevel < 3){
+        beanBasesList[treeLevel].transform.gameObject.SetActive(false);
+        this.GetComponent<BoxCollider>().size = beanBasesList[treeLevel].GetComponent<BoxCollider>().size + beanBasesList[treeLevel].transform.localScale;
+        }
         treeLevel++;
         beanBasesList[treeLevel].SetActive(true);
     }
