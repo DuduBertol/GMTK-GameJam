@@ -23,11 +23,13 @@ public class EnemyEntity : Entity
     {
         base.TakeDamage(_damage);
         _hitParticle.Play();
+        SoundManager.Instance.PlayHitSound(Camera.main.transform.position, 0.75f);   
     }
 
     public override void Die()
     {
         transform.GetComponent<StateMachine>().EndStateMachine();
         base.Die();
+        SoundManager.Instance.PlayJoaozinhoDeathSound(Camera.main.transform.position, 0.75f);
     }
 }

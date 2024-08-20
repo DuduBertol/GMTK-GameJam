@@ -80,6 +80,7 @@ public class GameController : MonoBehaviour
                 isDay = false;
                 runningTime = 0f;
                 OnDayNightChanged?.Invoke(this, EventArgs.Empty); // Night Become
+                SoundManager.Instance.PlayNightBecomeSound(Camera.main.transform.position, 1f);
             }
         }
         else

@@ -10,6 +10,9 @@ public class AudioClipsRefsSO : ScriptableObject
     public AudioClip sellEgg; //
     public AudioClip beanTreeGrow; //
     public AudioClip coin; //
+    public AudioClip nightBecome; //
+    public AudioClip joaozinhoDeath; //
+    public AudioClip hit; //
     public AudioClip beanTreeDamage; //Inimigo atacando
     public AudioClip beanTreeBreak; //Pé de feijão quebrando
     public AudioClip[] beanTreeFootstep; //Colisão do player na folha do pé de feijão

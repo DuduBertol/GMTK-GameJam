@@ -39,6 +39,12 @@ public class s_PlayerController : MonoBehaviour
             //_rigidbody.AddForce(_movementInput * (_movementSpeed * Time.fixedDeltaTime));
             //_rigidbody.velocity = (_movementInput * (_movementSpeed * Time.fixedDeltaTime));
             _rigidbody.MovePosition(_rigidbody.position + _movementInput.normalized * (Time.deltaTime * _movementSpeed));
+            
+            SoundManager.Instance.PlayGiantWalkSound(Camera.main.transform.position, 0.75f);
+        }
+        else
+        {
+            SoundManager.Instance.StopGiantWalkSound();
         }
 
         if(_movementInput.x < 0)
