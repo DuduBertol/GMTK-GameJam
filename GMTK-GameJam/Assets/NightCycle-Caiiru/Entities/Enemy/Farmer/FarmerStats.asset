@@ -22,6 +22,11 @@ MonoBehaviour:
   attackRange: 3
   attackRate: 0.5
   attackDamage: 1
-  mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  mesh: {fileID: -5287425419667122880, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
   materials:
-  - {fileID: 2100000, guid: d8aa536c4e7c24b469decaa5909ba9a1, type: 2}
+  - {fileID: -876546973899608171, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
+  - {fileID: -6478536213147159724, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
+  - {fileID: -3846018093981099296, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
+  - {fileID: 4874126678125670354, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
+  - {fileID: -6922793697723135513, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}
+  - {fileID: -6629797300637803691, guid: 01facc6ede9cb114aa3aba0d6b72d17d, type: 3}

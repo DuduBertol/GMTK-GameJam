@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     [SerializeField] private AudioClipsRefsSO audioClipsRefsSO;
+    [SerializeField] private AudioSource giantAudioSource;
     [Range(1f, 30f)][SerializeField] private float volume;
     // [SerializeField] private Slider volumeSlider;
 
@@ -36,6 +37,34 @@ public class SoundManager : MonoBehaviour
 
     //
 
+    public void PlayGiantWalkSound(Vector3 position, float volumeMultiplier)
+    {
+        if(giantAudioSource.mute)
+        {
+            giantAudioSource.mute = false;
+            // giantAudioSource.clip = audioClipsRefsSO.giantFootstep[Random.Range(0, audioClipsRefsSO.giantFootstep.Length)];
+        }
+    }
+    public void StopGiantWalkSound()
+    {
+        if(!giantAudioSource.mute)
+        {
+            giantAudioSource.mute = true;
+            // giantAudioSource.clip = null;
+        }
+    }
+    public void PlayHitSound(Vector3 position, float volumeMultiplier)
+    {
+        PlaySound(audioClipsRefsSO.hit, position, volumeMultiplier * volume);
+    }
+    public void PlayJoaozinhoDeathSound(Vector3 position, float volumeMultiplier)
+    {
+        PlaySound(audioClipsRefsSO.joaozinhoDeath, position, volumeMultiplier * volume);
+    }
+    public void PlayNightBecomeSound(Vector3 position, float volumeMultiplier)
+    {
+        PlaySound(audioClipsRefsSO.nightBecome, position, volumeMultiplier * volume);
+    }
     public void PlayDropGetItemSound(Vector3 position, float volumeMultiplier)
     {
         PlaySound(audioClipsRefsSO.dropGetItem, position, volumeMultiplier * volume);

@@ -17,6 +17,9 @@ MonoBehaviour:
   sellEgg: {fileID: 8300000, guid: cbe9d4a96c996df4888d7f70bc09dd29, type: 3}
   beanTreeGrow: {fileID: 8300000, guid: b664f8b99a153834695c59cb41c474f1, type: 3}
   coin: {fileID: 8300000, guid: 7ad37f77dff34f74d8be0a04e26b31dc, type: 3}
+  nightBecome: {fileID: 8300000, guid: 1baadc6ab860c9b47bd3bf7abdfe9660, type: 3}
+  joaozinhoDeath: {fileID: 8300000, guid: aedc57a14a8fd1b4c8533ec1d7d8552b, type: 3}
+  hit: {fileID: 0}
   beanTreeDamage: {fileID: 8300000, guid: 01d2353ae8d0b594ba36c20c92c68b97, type: 3}
   beanTreeBreak: {fileID: 8300000, guid: 7a0a16d365eff154fbebb86662d91bf5, type: 3}
   beanTreeFootstep:

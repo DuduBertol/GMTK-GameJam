@@ -11,7 +11,7 @@ public class EnemyEntity : Entity
     {
         stats = this.GetComponent<StateMachine>().stats;
         this.maxHP = stats.maxHP;
-        this.currentHP = stats.currentHP;  
+        this.currentHP = stats.currentHP;
         GetComponentInChildren<MeshFilter>().mesh = stats.mesh;
         //GetComponentInChildren<MeshRenderer>().materials[0] = stats.material;
         GetComponentInChildren<MeshRenderer>().SetMaterials(stats.materials);
@@ -23,12 +23,13 @@ public class EnemyEntity : Entity
     {
         base.TakeDamage(_damage);
         _hitParticle.Play();
-        
+        SoundManager.Instance.PlayHitSound(Camera.main.transform.position, 0.75f);   
     }
 
     public override void Die()
     {
         transform.GetComponent<StateMachine>().EndStateMachine();
         base.Die();
+        SoundManager.Instance.PlayJoaozinhoDeathSound(Camera.main.transform.position, 0.75f);
     }
 }
